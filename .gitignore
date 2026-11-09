@@ -1,0 +1,29 @@
+# 构建缓存
+.mirror-work/
+catalog/.cache/
+node_modules/
+dist/
+.mirror.lock
+
+# 插件安装包与清单（体积大，由 scripts/mirror.mjs 重新生成）
+# GitHub 单文件上限 100MB，files-0.6.3.tgz 等已超限，因此不入库
+mirror/packages/
+mirror/packages-linux/
+mirror/packages-win32/
+mirror/*.json
+mirror/.mirror.lock
+
+# 随包分发的 Node 运行时（二进制，用 scripts/fetch-node-runtime.sh 重新获取）
+runtime/node/
+
+# 运行期数据（后台插件、上传暂存、令牌）
+data/admin-token.txt
+data/admin/
+data/uploads/
+
+# 生成的中间产物
+mirror/manifest.old.json
+
+# 系统
+Thumbs.db
+.DS_Store

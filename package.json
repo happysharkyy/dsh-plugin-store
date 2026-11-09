@@ -1,0 +1,16 @@
+{
+  "name": "dsh-plugin-store",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "DSH 内网插件商店：文档处理 / SSH 远程 / PPT 制作插件的离线镜像与安装服务",
+  "scripts": {
+    "start": "node server.mjs",
+    "mirror": "node scripts/mirror.mjs",
+    "catalog": "node scripts/build-catalog.mjs",
+    "build": "node scripts/mirror.mjs && node scripts/build-catalog.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>管理后台 · DSH 内网插件商店</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b1a2e'/%3E%3Cpath d='M8 20c3-6 6-8 8-8s5 2 8 8c-2 3-5 5-8 5s-6-2-8-5z' fill='%2338bdf8'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/admin.css" />
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="/">
+      <div class="logo" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="34" height="34">
+          <defs>
+            <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#38bdf8" />
+              <stop offset="1" stop-color="#2dd4bf" />
+            </linearGradient>
+          </defs>
+          <path d="M6 26c5-11 11-15 14-15s9 4 14 15c-3 5-9 8-14 8s-11-3-14-8z" fill="url(#lg)" opacity=".92" />
+          <circle cx="23" cy="19" r="2" fill="#04121f" />
+        </svg>
+      </div>
+      <div class="brand-text">
+        <h1>管理后台</h1>
+        <p>上传插件包 · 填写元数据 · 立即上架</p>
+      </div>
+    </a>
+    <div class="admin-nav">
+      <a class="btn ghost" href="/">← 返回商店</a>
+      <span class="pill" id="platform-pill"><span class="dot"></span><span id="platform-text">—</span></span>
+      <button class="btn ghost" id="logout" hidden>退出</button>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <!-- 令牌 -->
+    <section id="auth-gate" class="auth-card">
+      <h2>输入管理员令牌</h2>
+      <p class="muted">令牌在服务启动时打印在控制台，也可查看服务器上的 <code>data/admin-token.txt</code>。</p>
+      <div class="auth-row">
+        <input type="password" id="token" placeholder="管理员令牌" autocomplete="off" />
+        <button class="btn primary" id="auth-btn">进入</button>
+      </div>
+      <p class="auth-err" id="auth-err" hidden>令牌无效</p>
+    </section>
+
+    <!-- 主体 -->
+    <section id="admin-app" hidden>
+      <div class="admin-grid">
+        <div class="admin-col">
+          <div class="panel">
+            <div class="panel-head">
+              <h2>1. 上传插件包</h2>
+              <span class="hint">.tgz，由 <code>scripts/mirror.mjs</code> 产出</span>
+            </div>
+            <div id="drop" class="dropzone" tabindex="0" role="button">
+              <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M4 15v3.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+              <strong>拖入 .tgz 文件，或点击选择</strong>
+              <span>离线包需自带 node_modules、且不含 dependencies</span>
+            </div>
+            <input type="file" id="file" accept=".tgz,.tar.gz,application/gzip" hidden />
+            <div id="inspect" class="inspect" hidden></div>
+          </div>
+
+          <div class="panel" id="meta-panel" hidden>
+            <div class="panel-head">
+              <h2>2. 填写展示信息</h2>
+              <span class="hint" id="meta-pkg"></span>
+            </div>
+            <div class="field-grid">
+              <label class="field"><span>标题</span><input id="f-title" placeholder="例如：Office 三件套" /></label>
+              <label class="field"><span>分类</span><select id="f-category"></select></label>
+              <label class="field wide"><span>一句话说明</span><input id="f-summary" placeholder="卡片上显示的一句话" /></label>
+              <label class="field wide"><span>能力点（每行一条）</span><textarea id="f-highlights" rows="4" placeholder="生成与编辑 .xlsx&#10;读写 .pptx"></textarea></label>
+              <label class="field wide"><span>标签（逗号分隔）</span><input id="f-tags" placeholder="Excel, Word, PDF" /></label>
+              <label class="field wide"><span>仓库地址（可选）</span><input id="f-repo" placeholder="https://github.com/owner/repo" /></label>
+              <label class="field wide"><span>额外说明（可选，详情页黄条）</span><textarea id="f-notes" rows="2"></textarea></label>
+              <label class="check"><input type="checkbox" id="f-featured" /><span>标记为推荐</span></label>
+              <label class="check"><input type="checkbox" id="f-offline" /><span>运行期需要联网预热</span></label>
+              <label class="field wide" id="offline-reason-wrap" hidden><span>断网注意说明</span><input id="f-offline-reason" placeholder="例如：首次运行会下载模型权重" /></label>
+            </div>
+            <div class="panel-actions">
+              <button class="btn primary" id="publish">发布上架</button>
+              <button class="btn ghost" id="reset">清空</button>
+              <span class="hint" id="edit-note" hidden>正在编辑已有插件</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-col">
+          <div class="panel">
+            <div class="panel-head">
+              <h2>后台已上架 <span id="count">0</span></h2>
+              <button class="btn ghost" id="refresh">刷新</button>
+            </div>
+            <div id="alist" class="alist"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/admin.js"></script>
+</body>
+</html>

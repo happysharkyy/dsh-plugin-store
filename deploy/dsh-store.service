@@ -1,0 +1,31 @@
+[Unit]
+Description=DSH 内网插件商店
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# 改成实际部署路径与运行用户
+WorkingDirectory=/opt/dsh-plugin-store
+# 用随包分发的 node，服务器不需要预装 Node.js
+ExecStart=/opt/dsh-plugin-store/runtime/node/bin/node /opt/dsh-plugin-store/server.mjs
+# 如果服务器上已有 Node 18+，也可以换成：ExecStart=/usr/bin/node /opt/dsh-plugin-store/server.mjs
+Environment=NODE_ENV=production
+Environment=PORT=8787
+Environment=HOST=0.0.0.0
+# 后台令牌：建议在这里固定下来，避免重建 data/ 后令牌变化
+# Environment=DSH_STORE_ADMIN_TOKEN=换成一串随机字符串
+
+Restart=always
+RestartSec=3
+User=dshstore
+Group=dshstore
+
+# 只允许写自己的数据目录
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ReadWritePaths=/opt/dsh-plugin-store/data
+
+[Install]
+WantedBy=multi-user.target

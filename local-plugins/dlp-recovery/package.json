@@ -1,0 +1,35 @@
+{
+  "name": "dsh-dlp-recovery",
+  "version": "1.0.0",
+  "description": "把被企业透明加密软件（DLP / Ocular / TSGuard）覆盖成密文的源文件还原为磁盘明文",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": {
+      "default": "./index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "skills",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "skill",
+    "dlp",
+    "transparent-encryption",
+    "recovery"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}

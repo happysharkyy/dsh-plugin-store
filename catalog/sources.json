@@ -1,0 +1,1354 @@
+{
+  "$comment": "上架清单（人工维护）。镜像脚本按此拉取源码打包，catalog 构建脚本按此生成前端数据。",
+  "site": {
+    "name": "DSH 内网插件商店",
+    "shortName": "DSH Store",
+    "version": 1
+  },
+  "categories": [
+    {
+      "id": "docs",
+      "name": "文档处理",
+      "desc": "Word / Excel / PDF / 图解与文档智能"
+    },
+    {
+      "id": "office",
+      "name": "办公协作",
+      "desc": "邮件、通知、笔记与汇报"
+    },
+    {
+      "id": "ppt",
+      "name": "PPT 制作",
+      "desc": "可编辑 PPTX 与 HTML 幻灯片"
+    },
+    {
+      "id": "ssh",
+      "name": "SSH 远程",
+      "desc": "远程主机、跳板与远程操控"
+    },
+    {
+      "id": "ui",
+      "name": "界面与主题",
+      "desc": "看板、皮肤、桌宠与外观"
+    },
+    {
+      "id": "agent",
+      "name": "智能体能力",
+      "desc": "记忆、技能、会话与多智能体"
+    },
+    {
+      "id": "dev",
+      "name": "开发工具",
+      "desc": "绘图、代码审查、市场与安全"
+    },
+    {
+      "id": "model",
+      "name": "模型与视觉",
+      "desc": "模型接入、识图、语音与浏览"
+    },
+    {
+      "id": "ops",
+      "name": "协作与运维",
+      "desc": "通知、用量、身份与移动端"
+    },
+    {
+      "id": "tools",
+      "name": "效率工具",
+      "desc": "本地辅助小工具"
+    }
+  ],
+  "plugins": [
+    {
+      "id": "office-suite",
+      "category": "docs",
+      "alsoIn": [
+        "ppt"
+      ],
+      "repo": "omdsh-dev/dsh-office",
+      "packageName": "@huiliyi37/dsh-office",
+      "title": "Office 三件套",
+      "summary": "让 Agent 直接生成、读取、编辑 Excel / Word / PDF / PPT，全部本地库，不依赖外部服务。",
+      "highlights": [
+        "生成与编辑 .xlsx：单元格、公式、样式",
+        "读写 .pptx 演示文稿",
+        "PDF 生成、文本抽取、页面操作",
+        "Word .docx 生成与解析"
+      ],
+      "tags": [
+        "Excel",
+        "Word",
+        "PDF",
+        "PPT",
+        "Office"
+      ],
+      "featured": true,
+      "verified": true
+    },
+    {
+      "id": "mineru",
+      "category": "docs",
+      "repo": "HuanLinOTO/dsh-plugin-mineru",
+      "packageName": "@huanlin/dsh-plugin-mineru",
+      "title": "MinerU 文档解析",
+      "summary": "把 PDF / 图片 / DOCX / PPTX / XLSX 解析成结构化 Markdown 或 JSON，扫描件走 OCR，适合长文档理解。",
+      "highlights": [
+        "扫描件、图片走 OCR 流程",
+        "输出 Markdown / JSON，便于喂给模型",
+        "支持批量文档解析"
+      ],
+      "tags": [
+        "OCR",
+        "PDF",
+        "解析",
+        "长文档"
+      ],
+      "offline": {
+        "ready": false,
+        "reason": "解析能力依赖 MinerU 服务，纯断网环境需先在内网自建 MinerU，再把服务地址填进插件配置。"
+      }
+    },
+    {
+      "id": "files",
+      "category": "docs",
+      "repo": "taxueseek/dsh-files",
+      "packageName": "dsh-files",
+      "title": "文档上传与直读",
+      "summary": "在原生上传管线上加文件夹按钮，拖进对话的 PDF / DOCX / XLSX 由 read_document 直接解析成文本。",
+      "highlights": [
+        "拖拽上传即生成彩色输入卡片",
+        "read_document 直接读 PDF / DOCX / XLSX",
+        "内容嗅探 + LRU 缓存，会话之间文件互相隔离"
+      ],
+      "tags": [
+        "上传",
+        "PDF",
+        "DOCX",
+        "XLSX"
+      ]
+    },
+    {
+      "id": "anydoc",
+      "category": "docs",
+      "repo": "beancookie/dsh-plugin-anydoc",
+      "packageName": "dsh-plugin-anydoc",
+      "title": "AnyDoc 文档转 Markdown",
+      "summary": "基于 @firecrawl/anydoc，把 Word、PPT、Excel、PDF、EPUB、CSV 统一转换成 GitHub 风格 Markdown。",
+      "highlights": [
+        "一个工具覆盖 7 类常见文档格式",
+        "输出 GitHub Flavored Markdown，表格保留",
+        "适合把外部资料批量喂进工作区"
+      ],
+      "tags": [
+        "Markdown",
+        "转换",
+        "EPUB"
+      ]
+    },
+    {
+      "id": "pdf-toolbox",
+      "category": "docs",
+      "repo": "sunshine-lang/dsh-pdf",
+      "packageName": "dsh-pdf",
+      "title": "PDF 工具箱",
+      "summary": "用本地 pdfjs-dist 提取文本、元数据与指定页码范围，不需要任何 API Key。",
+      "highlights": [
+        "本地解析，文档不出机器",
+        "可按页码范围抽取",
+        "读取 PDF 元数据"
+      ],
+      "tags": [
+        "PDF",
+        "文本提取",
+        "离线"
+      ]
+    },
+    {
+      "id": "remote-workspace",
+      "category": "ssh",
+      "repo": "flymysql/dsh-remote",
+      "packageName": "dsh-remote",
+      "title": "远程工作区（SSH / SFTP / 隧道）",
+      "summary": "SSH 连上任意主机后当本地工作区用：22 个 rw_* 工具、冲突感知 SFTP 镜像、内置终端、端口转发、多级跳板。",
+      "highlights": [
+        "原生「添加工作区」选远程目录，自动建本地镜像",
+        "密钥 / 密码 / 代理跳板三种连接方式",
+        "SFTP 双向同步、搜索、编辑、端口隧道",
+        "与本地会话共用同一套沙箱策略"
+      ],
+      "tags": [
+        "SSH",
+        "SFTP",
+        "跳板",
+        "隧道",
+        "终端"
+      ],
+      "featured": true,
+      "verified": true
+    },
+    {
+      "id": "easyssh",
+      "category": "ssh",
+      "repo": "chenw2759-wq/dsh-easyssh",
+      "subdir": "packages/dsh-easyssh",
+      "packageName": "dsh-easyssh",
+      "title": "EasySSH 远程 IDE",
+      "summary": "把 Web 端升级成 JupyterLab 式 IDE，并让 AI 在本机操控远程服务器：文件树、语法高亮编辑、diff、内置终端。",
+      "highlights": [
+        "JupyterLab 式文件树 + 代码编辑 + 多格式预览",
+        "Trae 风格红绿 diff",
+        "「本地大脑、远程手脚」的 SSH 远程工作区",
+        "零配置文件改动"
+      ],
+      "tags": [
+        "SSH",
+        "IDE",
+        "diff",
+        "终端"
+      ]
+    },
+    {
+      "id": "ssh-exec",
+      "category": "ssh",
+      "repo": "UynajGI/dsh-ssh",
+      "packageName": "dsh-ssh",
+      "title": "SSH 远程执行",
+      "summary": "基于 ssh2 的远程执行插件：ProxyJump 跳板链、SFTP 文件系统、子进程与 PTY，一个包补齐远程运维能力。",
+      "highlights": [
+        "ProxyJump 多级跳板链",
+        "SFTP 文件系统读写",
+        "远程子进程与交互式 PTY"
+      ],
+      "tags": [
+        "SSH",
+        "ProxyJump",
+        "SFTP",
+        "PTY"
+      ],
+      "verified": true
+    },
+    {
+      "id": "remote-ssh",
+      "category": "ssh",
+      "repo": "Yan-Zero/dsh-remote-ssh",
+      "packageName": "dsh-remote-ssh",
+      "title": "SSH 主机当透明工作区",
+      "summary": "把 SSH 主机直接注册成工作区，Agent 的读写与编辑操作在远端生效，像操作本地目录一样。",
+      "highlights": [
+        "SSH 主机 = 工作区，无需镜像同步",
+        "读写、编辑、搜索全部走远端",
+        "配置轻量，适合固定几台跳板机"
+      ],
+      "tags": [
+        "SSH",
+        "工作区",
+        "轻量"
+      ],
+      "verified": true
+    },
+    {
+      "id": "cloud-workspaces",
+      "category": "ssh",
+      "repo": "harryopo/dsh-remote-ide",
+      "packageName": "dsh-cloud-workspaces",
+      "title": "远程 Linux 工作区",
+      "summary": "bash / read / write / edit / glob / grep 全部透明跑在远端服务器上，远端零安装。",
+      "highlights": [
+        "整套文件类工具透明重定向到远端",
+        "远端不需要装任何东西",
+        "适合远程编译、远程调试场景"
+      ],
+      "tags": [
+        "SSH",
+        "远程开发",
+        "零安装"
+      ]
+    },
+    {
+      "id": "pptwize",
+      "category": "ppt",
+      "repo": "liustack/pptfast",
+      "packageName": "@liustack/pptwise",
+      "title": "pptwize 可编辑 PPT 生成",
+      "summary": "真正的 PowerPoint 而不是 HTML：告诉 AI 要讲什么，在本机直接产出一份能改的 .pptx，不用注册、渲染不花 API Key。",
+      "highlights": [
+        "语义 IR 进、原生 DrawingML 出，版式稳定可编辑",
+        "Agent Skill + DSH 插件双形态",
+        "无账号、无 API Key、完全本地渲染"
+      ],
+      "tags": [
+        "PPTX",
+        "可编辑",
+        "DrawingML"
+      ],
+      "featured": true
+    },
+    {
+      "id": "np-ppt",
+      "category": "ppt",
+      "repo": "z953218350/dsh-np-ppt",
+      "packageName": "dsh-np-ppt",
+      "title": "PPT 演示专家（PPTD DSL）",
+      "summary": "内置 PPTD DSL 引擎、所见即所得可视化编辑器与 Python-PPTX 离线编译内核，一键导出高保真 PPTX。",
+      "highlights": [
+        "PPTD DSL：先用结构化描述讲清版式",
+        "自带可视化编辑器，可手动微调",
+        "Python-PPTX 离线编译，导出 PPTX"
+      ],
+      "tags": [
+        "PPTX",
+        "DSL",
+        "编辑器"
+      ]
+    },
+    {
+      "id": "deck-builder",
+      "category": "ppt",
+      "repo": "Blaczz/dsh-deck-builder",
+      "packageName": "dsh-deck-builder",
+      "title": "Markdown 转 HTML 幻灯片",
+      "summary": "把 Markdown 转成自带主题与键盘导航的单文件 HTML 演示文稿，零依赖、不改核心。",
+      "highlights": [
+        "Markdown 直接变可放映的 HTML",
+        "多主题、键盘导航",
+        "单文件产出，方便内网分发"
+      ],
+      "tags": [
+        "HTML",
+        "Markdown",
+        "幻灯片"
+      ]
+    },
+    {
+      "id": "handwritten-ppt",
+      "category": "ppt",
+      "repo": "tjxj/dsh-wanghong-handwritten-ppt",
+      "packageName": "dsh-wanghong-handwritten-ppt",
+      "title": "学术手写风 PPT",
+      "summary": "Notability 手写风格的 HTML 幻灯片 Skill，支持导出 PNG，适合学术汇报与教学场景。",
+      "highlights": [
+        "手写笔记风格的 HTML 幻灯片",
+        "可导出 PNG 便于插入论文或海报",
+        "面向学术汇报排版"
+      ],
+      "tags": [
+        "学术",
+        "手写风",
+        "PNG"
+      ]
+    },
+    {
+      "id": "vision-toolkit",
+      "category": "office",
+      "repo": "Anionex/dsh-vision-toolkit",
+      "packageName": "@anionex/dsh-vision-toolkit",
+      "title": "视觉工具箱（截图 OCR / 看图）",
+      "summary": "给纯文本模型装上眼睛：多图问答、长截图 OCR、UI 还原与 GUI 自动化。",
+      "highlights": [
+        "长截图与图片逐字 OCR，报错信息、表格可直接转文字",
+        "多图理解与 UI 还原",
+        "可驱动 GUI 自动化"
+      ],
+      "tags": [
+        "OCR",
+        "截图",
+        "看图",
+        "UI 还原"
+      ],
+      "featured": true
+    },
+    {
+      "id": "auto-memory",
+      "category": "office",
+      "repo": "Aik358/dsh-auto-memory",
+      "packageName": "@a9i5k4/dsh-auto-memory",
+      "title": "自动记忆",
+      "summary": "三层记忆（用户级 / 项目笔记 / 每日日志）自动注入与检索，每日反思，带可视化面板。",
+      "highlights": [
+        "用户偏好、项目约定、每日日志分三层存放",
+        "自动注入相关记忆，不用每次重复交代背景",
+        "支持从其他记忆插件继承"
+      ],
+      "tags": [
+        "记忆",
+        "上下文",
+        "知识沉淀"
+      ]
+    },
+    {
+      "id": "notification",
+      "category": "office",
+      "repo": "omdsh-dev/dsh-notification",
+      "packageName": "dsh-notification",
+      "title": "回合完成通知",
+      "summary": "DSH 每一回合结束时弹桌面通知，可按结果分别控制，支持关键词包含 / 排除。",
+      "highlights": [
+        "回合结束即提醒，长任务不用盯着屏幕",
+        "按成功 / 失败 / 中断分别开关",
+        "支持关键词白名单与黑名单"
+      ],
+      "tags": [
+        "通知",
+        "提醒",
+        "桌面"
+      ]
+    },
+    {
+      "id": "sticky-note",
+      "category": "office",
+      "repo": "Meredith2328/dsh-sticky-note",
+      "packageName": "dsh-sticky-note",
+      "title": "便签",
+      "summary": "随手记点子、感想与 TODO，Markdown 预览、快捷键、历史归档，存储路径可配置。",
+      "highlights": [
+        "随手记，不打断当前任务",
+        "Markdown 预览与历史归档",
+        "数据落在本地文件，可自行备份"
+      ],
+      "tags": [
+        "便签",
+        "待办",
+        "笔记"
+      ]
+    },
+    {
+      "id": "email",
+      "category": "office",
+      "repo": "STARDUSTLC666/dsh-email",
+      "packageName": "dsh-email",
+      "title": "邮件收发",
+      "summary": "在 DSH 里处理邮件：浏览、搜索、下载附件，核对收件人与正文后再发出回复。",
+      "highlights": [
+        "支持 IMAP / POP3 / SMTP、Outlook OAuth 与 AgentMail",
+        "在工作台浏览邮件、搜索并下载附件",
+        "发送前逐项核对发件账号、To/Cc、正文与附件"
+      ],
+      "tags": [
+        "邮件",
+        "IMAP",
+        "Outlook"
+      ],
+      "featured": true
+    },
+    {
+      "id": "whale-report",
+      "category": "office",
+      "repo": "SenmuuuuW/dsh-whale-report",
+      "packageName": "dsh-whale-report",
+      "title": "日报周报生成",
+      "summary": "从会话事件日志生成日报 / 周报 / 月报 / 年报，任意时间区间，只读不改写原日志。",
+      "highlights": [
+        "按任意区间汇总工作内容",
+        "只读会话日志，不会改动原始记录",
+        "适合直接贴进周会材料"
+      ],
+      "tags": [
+        "日报",
+        "周报",
+        "汇报"
+      ]
+    },
+    {
+      "id": "bookmarks",
+      "category": "office",
+      "repo": "penguin-oo/dsh-bookmarks",
+      "packageName": "dsh-bookmarks",
+      "title": "回复书签",
+      "summary": "给任意一条回复加带备注和标签的书签，跨会话集中查看，一键导出 Markdown。",
+      "highlights": [
+        "消息级书签，带备注与标签",
+        "跨会话书签中心",
+        "一键导出 Markdown"
+      ],
+      "tags": [
+        "书签",
+        "检索",
+        "导出"
+      ]
+    },
+    {
+      "id": "docs-panel",
+      "category": "office",
+      "repo": "mlosun/dsh-docs-panel",
+      "packageName": "dsh-docs-panel",
+      "title": "随身手册",
+      "summary": "全局 Markdown 笔记面板，任何工作区随时可读：右侧滑出、亮暗主题、拖拽调宽、悬浮大纲。",
+      "highlights": [
+        "全局笔记，不绑定工作区",
+        "侧边滑出阅读，可拖拽调宽",
+        "一键转到 Chrome / VS Code 继续编辑"
+      ],
+      "tags": [
+        "笔记",
+        "Markdown",
+        "阅读"
+      ]
+    },
+    {
+      "id": "file-explorer",
+      "category": "office",
+      "repo": "joejojoking-cloud/dsh-file-explorer",
+      "packageName": "dsh-file-explorer",
+      "title": "文件浏览器",
+      "summary": "右侧可调宽文件树，Markdown 渲染、语法高亮、面板内编辑，一键用 VS Code 或系统文件管理器打开。",
+      "highlights": [
+        "多标签预览，切换不重新加载",
+        "Markdown 渲染 + 多语言语法高亮",
+        "可直接在面板内编辑并保存回磁盘",
+        "一键在 VS Code / 系统资源管理器中定位"
+      ],
+      "tags": [
+        "文件树",
+        "预览",
+        "VS Code"
+      ]
+    },
+    {
+      "id": "hongtou",
+      "category": "docs",
+      "repo": "ExElectron/dsh-tool-hongtou",
+      "packageName": "dsh-tool-hongtou",
+      "title": "红头公文生成",
+      "summary": "两阶段解耦流水线（LLM 结构化提纲 + 确定性 Word 2003 XML 版式渲染）生成标准红头公文。",
+      "highlights": [
+        "LLM 只负责内容，版式由确定性渲染保证",
+        "输出符合公文格式的 Word 文档",
+        "格式稳定，不会每次都变形"
+      ],
+      "tags": [
+        "公文",
+        "Word",
+        "红头"
+      ]
+    },
+    {
+      "id": "pdf-edit",
+      "category": "docs",
+      "repo": "Whatsmore-nf/dsh-pdf-edit",
+      "packageName": "dsh-pdf-edit",
+      "title": "PDF 编辑",
+      "summary": "AI 只改文字不改样式：支持单页与批量替换，HTML 中转保留原有排版，大文件也能处理。",
+      "highlights": [
+        "改内容不动版式",
+        "单页修改或批量替换",
+        "HTML 中转保留样式"
+      ],
+      "tags": [
+        "PDF",
+        "编辑",
+        "批量"
+      ]
+    },
+    {
+      "id": "dlp-recovery",
+      "category": "tools",
+      "local": "local-plugins/dlp-recovery",
+      "packageName": "dsh-dlp-recovery",
+      "title": "DLP 加密文件恢复",
+      "summary": "把被透明加密软件（Ocular / TSGuard 等）覆盖成密文的源文件还原为磁盘明文，自带扫描、恢复与校验。",
+      "highlights": [
+        "按 %TSD-Header 特征识别被加密文件",
+        "受信进程读出明文，再按字节覆写回原路径",
+        "恢复后自动校验语法与哈希，串写能被发现",
+        "专门解决「文件看起来正常、外部程序读到乱码」这类问题"
+      ],
+      "tags": [
+        "DLP",
+        "加密",
+        "恢复",
+        "Windows"
+      ]
+    },
+    {
+      "id": "ops",
+      "category": "dev",
+      "packageName": "dsh-ops",
+      "npmVersion": "0.5.2",
+      "title": "dsh-ops",
+      "summary": "为 Windows 的 DSH 提供 bash、PowerShell 7 及 Rust 高性能工具，减少 token 消耗。",
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "credentials"
+      ],
+      "stars": 5074,
+      "downloads": 146506,
+      "marketCategory": "tools",
+      "importWhy": "点名",
+      "needsSandbox": true
+    },
+    {
+      "id": "skill-explorer",
+      "category": "agent",
+      "packageName": "@linxin666/dsh-client-ui-skill-explorer",
+      "npmVersion": "0.4.16",
+      "title": "dsh-web#packages/dsh-skill-explorer",
+      "summary": "技能中心：按来源分级浏览已加载的全部 skill，启用/禁用模型调用、创建新技能、删除进可恢复回收站。",
+      "tags": [
+        "skill"
+      ],
+      "stars": 9959,
+      "downloads": 151282,
+      "marketCategory": "skill",
+      "importWhy": "点名",
+      "needsSandbox": false
+    },
+    {
+      "id": "wallpaper-engine",
+      "category": "ui",
+      "packageName": "dsh-plugin-wallpaper-engine",
+      "npmVersion": "1.4.2",
+      "title": "dsh-wallpaper-engine",
+      "summary": "前置要求：DeepSeek Harness 0.1.5-rc.1+（DSH Desktop ≥ 2.0.7）且 dsh-better-sidebar ≥ 0.19.0，安装或更新本插件前请先更新两者。把本机 Wallpaper Engine 的 Video/Web 壁纸实时播放到聊天界面后方，Scene 壁纸由内置渲染器输出完整场景帧，支持内容分级/类型过滤、自定义壁纸上传与 iOS 液态玻璃设置窗口。",
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "env"
+      ],
+      "stars": 5528,
+      "downloads": 135476,
+      "marketCategory": "theme",
+      "importWhy": "点名",
+      "needsSandbox": true,
+      "notes": "前置要求：dsh-better-sidebar ≥ 0.19.0，先装侧边栏工作台再装它。"
+    },
+    {
+      "id": "code-review",
+      "category": "dev",
+      "packageName": "@feng0531/dsh-code-review",
+      "npmVersion": "0.92.3",
+      "title": "dsh-code-review",
+      "summary": "复用当前 DSH Agent 模型只读审查 Git 与 SVN 变更，支持变更预览、显式上下文及经审批的模型请求。",
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "env",
+        "llm"
+      ],
+      "stars": 9,
+      "downloads": 26998,
+      "marketCategory": "git",
+      "importWhy": "点名",
+      "needsSandbox": true
+    },
+    {
+      "id": "image-gen",
+      "category": "agent",
+      "packageName": "dsh-image-gen",
+      "npmVersion": "0.11.1",
+      "title": "dsh-image-gen",
+      "summary": "为 DeepSeek Harness 提供原生对话生图能力：直接让 Agent 画图，插件自动完成生成并把结果保留在当前会话中。",
+      "tags": [
+        "fs-write",
+        "fs-read",
+        "network",
+        "credentials",
+        "env"
+      ],
+      "stars": 1075,
+      "downloads": 63887,
+      "marketCategory": "workflow",
+      "importWhy": "点名",
+      "needsSandbox": true
+    },
+    {
+      "id": "clearai-dsh",
+      "category": "agent",
+      "packageName": "clearai-dsh",
+      "npmVersion": "0.6.0",
+      "title": "clearai-dsh",
+      "summary": "以证据为准的研究用智能体预设：每一步只能靠系统核验过的观测推进，L3 以上的结论交给独立评估者，整场会话折成一份可重放的账本，并长成可浏览的领域本体。需要 DSH >=0.1.7-alpha.1。",
+      "tags": [
+        "shell",
+        "fs-read",
+        "network",
+        "env"
+      ],
+      "stars": 689,
+      "downloads": 7493,
+      "marketCategory": "agi",
+      "importWhy": "agi 前二",
+      "needsSandbox": true
+    },
+    {
+      "id": "memory",
+      "category": "agent",
+      "packageName": "@furongjun1999/dsh-memory",
+      "npmVersion": "0.9.23",
+      "title": "dsh-memory",
+      "summary": "白箱AGI架构探索：元认知（自我认知循环）、持续学习（知识飞轮）、世界模型（条件空间+语义时空图）、自我改进（自举纪律）、零LLM白箱管线与可审计信任护栏。",
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "env"
+      ],
+      "stars": 613,
+      "downloads": 30692,
+      "marketCategory": "agi",
+      "importWhy": "agi 前二",
+      "needsSandbox": true
+    },
+    {
+      "id": "task-board",
+      "category": "ui",
+      "packageName": "@linxin666/dsh-client-ui-task-board",
+      "npmVersion": "0.4.16",
+      "title": "dsh-web#packages/dsh-task-board",
+      "summary": "侧边栏多列任务看板：卡片交给真实 DSH 智能体会话执行，支持 cron 定时（Host 侧到点执行，关浏览器也生效）。",
+      "tags": [
+        "ui"
+      ],
+      "stars": 10172,
+      "downloads": 125382,
+      "marketCategory": "ui",
+      "importWhy": "ui 前二",
+      "needsSandbox": false
+    },
+    {
+      "id": "web-all",
+      "category": "ui",
+      "packageName": "@linxin666/dsh-web-all",
+      "npmVersion": "0.4.16",
+      "title": "dsh-web#packages/dsh-web-all",
+      "summary": "DSH Web UI 插件与皮肤合集：任务看板、git 图、右侧面板、远程移动端 UI、桌宠、实时 token 统计与皮肤中心。",
+      "tags": [
+        "dynamic-code",
+        "network",
+        "credentials"
+      ],
+      "stars": 10172,
+      "downloads": 103570,
+      "marketCategory": "ui",
+      "importWhy": "ui 前二",
+      "needsSandbox": true
+    },
+    {
+      "id": "context",
+      "category": "ops",
+      "packageName": "dsh-context",
+      "npmVersion": "0.83.0",
+      "title": "dsh-context",
+      "summary": "DSH 上下文洞察面板：Context 仪表盘 + /context命令 + Context 浏览器，查看 Context的分类组成、内容详情、演进趋势、压缩/注入事件、统计等一站式 Context 全生命周期管理。",
+      "tags": [
+        "fs-write",
+        "network"
+      ],
+      "stars": 4440,
+      "downloads": 385738,
+      "marketCategory": "usage",
+      "importWhy": "usage 前二",
+      "needsSandbox": true
+    },
+    {
+      "id": "cost-meter",
+      "category": "ops",
+      "packageName": "dsh-cost-meter",
+      "npmVersion": "1.9.60",
+      "title": "dsh-cost-meter",
+      "summary": "会话与当日 API 费用统计、预算图框（已用%）、官方余额、历史看板，支持峰谷计价与官方价格一键同步。",
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "credentials"
+      ],
+      "stars": 642,
+      "downloads": 136908,
+      "marketCategory": "usage",
+      "importWhy": "usage 前二",
+      "needsSandbox": true
+    },
+    {
+      "id": "skin-maid-atelier",
+      "category": "ui",
+      "packageName": "@smalltailqwq/dsh-client-ui-skin-maid-atelier",
+      "npmVersion": "0.1.10",
+      "title": "dsh-deep-whale#maid-atelier",
+      "summary": "DSH Web 鲸鱼娘皮肤系列（深海女仆工坊 maid-atelier）。",
+      "tags": [
+        "fs-read"
+      ],
+      "stars": 3054,
+      "downloads": 91238,
+      "marketCategory": "theme",
+      "importWhy": "theme 前二",
+      "needsSandbox": false
+    },
+    {
+      "id": "connect-workbuddy",
+      "category": "model",
+      "packageName": "dsh-connect-workbuddy",
+      "npmVersion": "5.21.2",
+      "title": "dsh-connect-workbuddy",
+      "summary": "将本机登录的 WorkBuddy 模型（国内版与国际版）接入 DSH，每次刷新按上游目录读取每个模型的积分倍率，支持逐模型图片输入开关、带自动换号的账号池、手动每日签到，以及卡片与输入框里的只读积分胶囊读数。",
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "env"
+      ],
+      "stars": 1244,
+      "downloads": 80185,
+      "marketCategory": "model",
+      "importWhy": "model 前二",
+      "needsSandbox": true
+    },
+    {
+      "id": "oidc",
+      "category": "ops",
+      "packageName": "@eduwork/dsh-oidc",
+      "npmVersion": "0.3.3",
+      "title": "EduWork#dsh-oidc",
+      "summary": "可配置的 OIDC 登录与令牌授权模型接入，支持 LiteLLM 和显式启用的 oidc-llm 集成，提供独立 DSH Web 后端。",
+      "tags": [
+        "identity"
+      ],
+      "stars": 301,
+      "downloads": 2957,
+      "marketCategory": "identity",
+      "importWhy": "identity 前二",
+      "needsSandbox": false
+    },
+    {
+      "id": "feiyu-mood",
+      "category": "ops",
+      "packageName": "dsh-feiyu-mood",
+      "npmVersion": "0.9.2",
+      "title": "dsh-feiyu-mood",
+      "summary": "给 AI 伙伴一个每轮判定、以一小段上下文提示的心情，面板里能看心情值、情绪维度与时间线。",
+      "tags": [
+        "fs-write",
+        "fs-read",
+        "network",
+        "env",
+        "llm"
+      ],
+      "stars": 247,
+      "downloads": 16893,
+      "marketCategory": "identity",
+      "importWhy": "identity 前二",
+      "needsSandbox": true
+    },
+    {
+      "id": "billion-context",
+      "category": "agent",
+      "packageName": "billion-context",
+      "npmVersion": "0.1.213",
+      "title": "billion-context",
+      "summary": "billion-context官方版：上下文压缩插件，兼顾小窗口(100k上下文足矣)省token(省5倍token)和超长会话(数月级别几十亿token单会话)。",
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "credentials"
+      ],
+      "stars": 4316,
+      "downloads": 3033041,
+      "marketCategory": "session",
+      "importWhy": "session 前二",
+      "needsSandbox": true
+    },
+    {
+      "id": "archive-manager",
+      "category": "agent",
+      "packageName": "@michengai/dsh-archive-manager",
+      "npmVersion": "1.2.8",
+      "title": "dsh-archive-manager",
+      "summary": "在设置里增加已归档会话页，可按工作区搜索、恢复和删除已归档会话。",
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "env"
+      ],
+      "stars": 304,
+      "downloads": 105441,
+      "marketCategory": "session",
+      "importWhy": "session 前二",
+      "needsSandbox": true
+    },
+    {
+      "id": "hindsight-coding-agents",
+      "category": "agent",
+      "packageName": "@vectorize-io/hindsight-coding-agents",
+      "npmVersion": "0.8.6",
+      "title": "hindsight#coding-agents",
+      "summary": "Hindsight：会学习的 Agent 长期记忆系统，自动召回/保存、知识页、深度反思与按仓库隔离的记忆银行。",
+      "tags": [
+        "memory"
+      ],
+      "stars": 59457,
+      "downloads": 97988,
+      "marketCategory": "memory",
+      "importWhy": "memory 前二",
+      "needsSandbox": false
+    },
+    {
+      "id": "memory-plugin",
+      "category": "agent",
+      "packageName": "@openviking/dsh-memory-plugin",
+      "npmVersion": "0.5.33",
+      "title": "OpenViking#examples/dsh-memory-plugin",
+      "summary": "面向 DeepSeek Harness 的 OpenViking 记忆与上下文插件：pre-step 自动召回与画像注入、会话捕获、`viking://` URI 防护，以及对接 OpenViking 服务端的 recall/write 记忆工具。",
+      "tags": [
+        "env"
+      ],
+      "stars": 41708,
+      "downloads": 44353,
+      "marketCategory": "memory",
+      "importWhy": "memory 前二",
+      "needsSandbox": false
+    },
+    {
+      "id": "dsh",
+      "category": "dev",
+      "packageName": "@next-ai-drawio/dsh",
+      "npmVersion": "0.1.0",
+      "title": "next-ai-draw-io#dsh-plugin",
+      "summary": "dsh 的 draw.io 绘图插件：通过 next-ai-drawio MCP 服务器作图，点回复里的链接在右侧栏打开实时预览，可以手动修改图，AI 的每次修改都是可以恢复的版本。需 Node.js 18+，首次使用由 npx 下载 MCP 服务器。",
+      "tags": [
+        "tools"
+      ],
+      "stars": 36749,
+      "downloads": 1108,
+      "marketCategory": "tools",
+      "importWhy": "tools 前二",
+      "needsSandbox": false
+    },
+    {
+      "id": "weknora",
+      "category": "dev",
+      "packageName": "@wxg-prc-cpg/dsh-weknora",
+      "npmVersion": "0.1.0",
+      "title": "WeKnora#dsh-weknora",
+      "summary": "把 WeKnora 知识库接入 dsh 的四个只读工具：列出知识库、混合检索原文片段、按顺序还原单篇文档，以及直接取用 WeKnora 自己带引用的 RAG 或 ReAct agent 回答（含可续聊的 session id）。",
+      "tags": [
+        "tools"
+      ],
+      "stars": 36302,
+      "downloads": 8599,
+      "marketCategory": "tools",
+      "importWhy": "tools 前二",
+      "needsSandbox": false
+    },
+    {
+      "id": "browser-skill-dsh-plugin",
+      "category": "model",
+      "packageName": "@wxg-prc-cpg/browser-skill-dsh-plugin",
+      "npmVersion": "0.4.2",
+      "title": "BrowserSkill#dsh-plugin-browserskill",
+      "summary": "BrowserSkill 的 DeepSeek Harness 浏览器自动化桥接插件，通过原生浏览器工具控制可见的 Chrome 和 Edge Agent Window，支持可访问性与 VOM 页面观察、截图、隔离的多会话控制和 Web UI 实时观察浮层。",
+      "tags": [
+        "browser"
+      ],
+      "stars": 9929,
+      "downloads": 45458,
+      "marketCategory": "browser",
+      "importWhy": "browser 前二",
+      "needsSandbox": false
+    },
+    {
+      "id": "modsearch",
+      "category": "model",
+      "packageName": "@liustack/modsearch",
+      "npmVersion": "5.10.12",
+      "title": "modsearch",
+      "summary": "纯文本 agent 的联网搜索桥：搜索网页与 X，返回结构化 JSON 证据（search/fetch/引用）。",
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "env"
+      ],
+      "stars": 911,
+      "downloads": 62248,
+      "marketCategory": "browser",
+      "importWhy": "browser 前二",
+      "needsSandbox": true
+    },
+    {
+      "id": "modlens",
+      "category": "model",
+      "packageName": "@liustack/modlens",
+      "npmVersion": "3.27.3",
+      "title": "modlens",
+      "summary": "为纯文本模型架起视觉桥梁：粘贴图片，输出结构化 JSON 证据（OCR、版面、语义）。",
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "env"
+      ],
+      "stars": 4725,
+      "downloads": 253605,
+      "marketCategory": "vision",
+      "importWhy": "vision 前二",
+      "needsSandbox": true
+    },
+    {
+      "id": "vision-router",
+      "category": "model",
+      "packageName": "dsh-vision-router",
+      "npmVersion": "3.1.5",
+      "title": "dsh-vision-router",
+      "summary": "为纯文本 Agent 提供视觉能力：内置免 Key 视觉链 + 像素级视觉工具（看图问答、定位、裁剪、像素对比、取色、OCR、矢量化、抠图、截图）；粘贴图片即可用。",
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "credentials"
+      ],
+      "stars": 1211,
+      "downloads": 54296,
+      "marketCategory": "vision",
+      "importWhy": "vision 前二",
+      "needsSandbox": true
+    },
+    {
+      "id": "tts-bridge",
+      "category": "model",
+      "packageName": "dsh-tts-bridge",
+      "npmVersion": "1.3.3",
+      "title": "dsh-tts-bridge",
+      "summary": "用 DeepSeek 网页端自带的朗读，把 DSH 里的对话念出来，靠一个小浏览器扩展驱动。",
+      "tags": [
+        "fs-write",
+        "fs-read",
+        "network",
+        "env"
+      ],
+      "stars": 217,
+      "downloads": 5821,
+      "marketCategory": "voice",
+      "importWhy": "voice 前二",
+      "needsSandbox": true
+    },
+    {
+      "id": "archify-dsh",
+      "category": "docs",
+      "packageName": "@tt-a1i/archify-dsh",
+      "npmVersion": "1.1.0",
+      "title": "archify#integrations/deepseek-harness",
+      "summary": "从仓库或系统描述生成经过校验的自包含交互式架构图、流程图、时序图、数据流图和生命周期图。",
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "env"
+      ],
+      "stars": 92724,
+      "downloads": 45979,
+      "marketCategory": "docs",
+      "importWhy": "docs 前二",
+      "needsSandbox": true
+    },
+    {
+      "id": "skillhub-dsh",
+      "category": "agent",
+      "packageName": "@astron-team/skillhub-dsh",
+      "npmVersion": "0.6.2",
+      "title": "skillhub#dsh",
+      "summary": "在 DeepSeek Harness 内浏览、搜索 SkillHub 技能，并管理本地技能的安装、更新和卸载。适配 DSH 0.2.0-rc.2 与 0.2.1-rc.2，暂不兼容 0.2.1-rc.3。",
+      "tags": [
+        "skill"
+      ],
+      "stars": 5358,
+      "downloads": 1881,
+      "marketCategory": "skill",
+      "importWhy": "skill 前二",
+      "needsSandbox": false
+    },
+    {
+      "id": "agent-teams",
+      "category": "agent",
+      "packageName": "@nanmicoder/dsh-agent-teams",
+      "npmVersion": "0.1.29",
+      "title": "dsh-agent-teams",
+      "summary": "AgentTeams 多智能体团队。",
+      "tags": [
+        "fs-write",
+        "fs-read",
+        "network",
+        "subagent",
+        "llm"
+      ],
+      "stars": 2647,
+      "downloads": 56682,
+      "marketCategory": "workflow",
+      "importWhy": "workflow 前二",
+      "needsSandbox": true
+    },
+    {
+      "id": "ai-novel-writer",
+      "category": "agent",
+      "packageName": "@ethanyoq/dsh-ai-novel-writer",
+      "npmVersion": "0.1.0",
+      "title": "AI-Novel-Writer#dsh-ai-novel-writer",
+      "summary": "安装专用 AI 小说创作预设与工作台：提供带修订号的本地项目资产、紧凑侧边工作台，以及需要原生审批的逐文件变更。",
+      "tags": [
+        "workflow"
+      ],
+      "stars": 2265,
+      "downloads": 1544,
+      "marketCategory": "workflow",
+      "importWhy": "workflow 前二",
+      "needsSandbox": false
+    },
+    {
+      "id": "git-graph",
+      "category": "dev",
+      "packageName": "@linxin666/dsh-client-ui-git-graph",
+      "npmVersion": "0.4.14",
+      "title": "dsh-web#packages/dsh-git-graph",
+      "summary": "输入框上方提供 Git 分支选择器，并把分支泳道与提交历史画成图谱，沿着时间线找到任意变更。",
+      "tags": [
+        "git"
+      ],
+      "stars": 9959,
+      "downloads": 116042,
+      "marketCategory": "git",
+      "importWhy": "git 前二",
+      "needsSandbox": false
+    },
+    {
+      "id": "code-review-2",
+      "category": "dev",
+      "packageName": "@michengai/dsh-code-review",
+      "npmVersion": "1.0.8",
+      "title": "dsh-code-review",
+      "summary": "提供 /review、/review-status 和 /review-cancel，用独立原生子 Agent 审查所选 Git 范围（基准分支、未提交更改、某次提交或自定义要求），并把发现报告返回当前会话；报告语言跟随宿主 locale，支持中英文。",
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "env",
+        "subagent"
+      ],
+      "stars": 16,
+      "downloads": 24917,
+      "marketCategory": "git",
+      "importWhy": "git 前二",
+      "needsSandbox": true
+    },
+    {
+      "id": "pocket",
+      "category": "ops",
+      "packageName": "dsh-pocket",
+      "npmVersion": "2.12.0",
+      "title": "dsh-pocket",
+      "summary": "手机远程访问 DSH Web 界面：扫码即用局域网或公网（cloudflared 隧道）访问，实时同屏、移动端适配布局，带设置页管理。",
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "env"
+      ],
+      "stars": 2685,
+      "downloads": 21635,
+      "marketCategory": "notify",
+      "importWhy": "notify 前二",
+      "needsSandbox": true
+    },
+    {
+      "id": "skills-manager",
+      "category": "dev",
+      "packageName": "@michengai/dsh-skills-manager",
+      "npmVersion": "1.3.1",
+      "title": "dsh-skills-manager",
+      "summary": "在设置里管理本地 DSH 技能，并只读查看公共 Agent 技能。",
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "env"
+      ],
+      "stars": 444,
+      "downloads": 190744,
+      "marketCategory": "dev",
+      "importWhy": "dev 前二",
+      "needsSandbox": true
+    },
+    {
+      "id": "cc-safety-net",
+      "category": "dev",
+      "packageName": "cc-safety-net",
+      "npmVersion": "2.7.7",
+      "title": "cc-safety-net",
+      "summary": "执行前守卫，在工具调用运行前拦截破坏性 Git 与文件系统命令，以及对 SSH 密钥、.env 等机密文件的访问。",
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "credentials"
+      ],
+      "stars": 1900,
+      "downloads": 126068,
+      "marketCategory": "security",
+      "importWhy": "security 前二",
+      "needsSandbox": true
+    },
+    {
+      "id": "api-relay-audit",
+      "category": "dev",
+      "packageName": "dsh-api-relay-audit",
+      "npmVersion": "2.5.0",
+      "title": "api-relay-audit",
+      "summary": "从 DeepSeek Harness 对 AI API 中转站和 LLM 代理运行本地安全审计，生成 Markdown 报告，覆盖提示词注入、模型替换信号、工具调用改写、错误泄漏、流完整性和按 profile 启用的 Web3 风险。",
+      "tags": [
+        "shell",
+        "fs-read",
+        "credentials",
+        "llm"
+      ],
+      "stars": 904,
+      "downloads": 839,
+      "marketCategory": "security",
+      "importWhy": "security 前二",
+      "needsSandbox": true
+    },
+    {
+      "id": "remote-web-ui",
+      "category": "ssh",
+      "packageName": "@linxin666/dsh-remote-web-ui",
+      "npmVersion": "0.4.16",
+      "title": "dsh-web#packages/dsh-remote-web-ui",
+      "summary": "手机/PC 远程操控 dsh web 工作区：扫码配对、令牌门控通道、SSE 实时同步，提供移动端与完整桌面 GUI 两种远程形态。",
+      "tags": [
+        "remote"
+      ],
+      "stars": 9959,
+      "downloads": 112804,
+      "marketCategory": "remote",
+      "importWhy": "remote 前二",
+      "needsSandbox": false
+    },
+    {
+      "id": "ssh",
+      "category": "ssh",
+      "packageName": "@linxin666/dsh-ssh",
+      "npmVersion": "0.4.16",
+      "title": "dsh-web#packages/dsh-ssh",
+      "summary": "SSH 远程运维面板：Web 终端、SFTP 传输、本地端口转发与一条命令并发集群执行，Agent 与面板共用同一份主机配置。",
+      "tags": [
+        "remote"
+      ],
+      "stars": 9959,
+      "downloads": 108816,
+      "marketCategory": "remote",
+      "importWhy": "remote 前二",
+      "needsSandbox": false
+    },
+    {
+      "id": "dshmarket",
+      "category": "dev",
+      "packageName": "dshmarket",
+      "npmVersion": "1.73.16",
+      "title": "dsh-market",
+      "summary": "在 DeepSeek Harness 设置页内浏览、搜索并安装社区插件，支持分类筛选、一键更新与停用，以及主题切换与配置备份。",
+      "tags": [
+        "shell",
+        "dynamic-code",
+        "fs-write",
+        "fs-read",
+        "network"
+      ],
+      "stars": 10295,
+      "downloads": 1026119,
+      "marketCategory": "market",
+      "importWhy": "market 前二",
+      "needsSandbox": true
+    },
+    {
+      "id": "skin-market",
+      "category": "dev",
+      "packageName": "dsh-skin-market",
+      "npmVersion": "0.1.81",
+      "title": "dsh-skin-market",
+      "summary": "原生皮肤市场与生命周期管理器，发现社区皮肤、展示预览与兼容状态，并提供已验证的一键安装或手动安装入口。",
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "env"
+      ],
+      "stars": 295,
+      "downloads": 14221,
+      "marketCategory": "market",
+      "importWhy": "market 前二",
+      "needsSandbox": true
+    },
+    {
+      "id": "pet",
+      "category": "ui",
+      "packageName": "dsh-pet",
+      "npmVersion": "0.4.7",
+      "title": "dsh-pet#dsh-pet",
+      "summary": "DSH Web UI 桌面宠物，Windows / macOS / Linux 三端可用：浏览器浮层或透明置顶桌面窗口，106 个透明动画、带挤压与粒子的甩抛反弹物理、随会话事件实时联动的工作状态气泡、碎碎念与带持久记忆的对话、余额展示、表情包配图、多开同屏，并支持直接放入的自定义动画与宠物种类（pet pack）。",
+      "tags": [
+        "fun"
+      ],
+      "stars": 5347,
+      "downloads": 458201,
+      "marketCategory": "fun",
+      "importWhy": "fun 前二",
+      "needsSandbox": false
+    },
+    {
+      "id": "ads",
+      "category": "ui",
+      "packageName": "@nagi-ovo/dsh-ads",
+      "npmVersion": "0.1.4",
+      "title": "dsh-ads",
+      "summary": "2005 年中文站点风格的整活广告插件：侧栏广告/信息流/角落弹窗 + 假关闭叉，素材全虚构。",
+      "tags": [
+        "shell",
+        "network",
+        "env"
+      ],
+      "stars": 707,
+      "downloads": 2260,
+      "marketCategory": "fun",
+      "importWhy": "fun 前二",
+      "needsSandbox": true
+    },
+    {
+      "id": "better-sidebar",
+      "category": "ui",
+      "packageName": "dsh-better-sidebar",
+      "title": "侧边栏工作台",
+      "summary": "把右侧栏升级成完整工作台：文件渲染与编辑、终端、Git、子代理都在侧栏里，并允许第三方插件注册自己的 Tab。",
+      "highlights": [
+        "侧栏内置文件预览/编辑、终端、Git 与子代理面板",
+        "支持第三方插件注册新 Tab（壁纸引擎等插件依赖它）",
+        "DSH Web 与桌面端通用"
+      ],
+      "tags": [
+        "侧栏",
+        "终端",
+        "Git",
+        "文件预览"
+      ],
+      "notes": "壁纸引擎（dsh-plugin-wallpaper-engine）要求它 ≥ 0.19.0，建议先装这个。与合集包 @linxin666/dsh-web-all 同时装可能抢占同一个侧栏位置，二选一。",
+      "stars": 4959,
+      "downloads": 289396,
+      "featured": true
+    }
+  ]
+}

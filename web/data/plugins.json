@@ -1,0 +1,4198 @@
+{
+  "site": {
+    "name": "DSH 内网插件商店",
+    "shortName": "DSH Store",
+    "version": 1,
+    "dshVersion": "0.2.1-rc.5",
+    "platform": "linux-x64"
+  },
+  "generatedAt": "2026-11-09T03:35:09.879Z",
+  "categories": [
+    {
+      "id": "docs",
+      "name": "文档处理",
+      "desc": "Word / Excel / PDF / 图解与文档智能"
+    },
+    {
+      "id": "office",
+      "name": "办公协作",
+      "desc": "邮件、通知、笔记与汇报"
+    },
+    {
+      "id": "ppt",
+      "name": "PPT 制作",
+      "desc": "可编辑 PPTX 与 HTML 幻灯片"
+    },
+    {
+      "id": "ssh",
+      "name": "SSH 远程",
+      "desc": "远程主机、跳板与远程操控"
+    },
+    {
+      "id": "ui",
+      "name": "界面与主题",
+      "desc": "看板、皮肤、桌宠与外观"
+    },
+    {
+      "id": "agent",
+      "name": "智能体能力",
+      "desc": "记忆、技能、会话与多智能体"
+    },
+    {
+      "id": "dev",
+      "name": "开发工具",
+      "desc": "绘图、代码审查、市场与安全"
+    },
+    {
+      "id": "model",
+      "name": "模型与视觉",
+      "desc": "模型接入、识图、语音与浏览"
+    },
+    {
+      "id": "ops",
+      "name": "协作与运维",
+      "desc": "通知、用量、身份与移动端"
+    },
+    {
+      "id": "tools",
+      "name": "效率工具",
+      "desc": "本地辅助小工具"
+    }
+  ],
+  "stats": {
+    "total": 69,
+    "ready": 69,
+    "failed": 0,
+    "incompatible": 13,
+    "needsWarmup": 1,
+    "totalSizeBytes": 922588971,
+    "totalDownloads": 7910723
+  },
+  "plugins": [
+    {
+      "id": "better-sidebar",
+      "title": "侧边栏工作台",
+      "summary": "把右侧栏升级成完整工作台：文件渲染与编辑、终端、Git、子代理都在侧栏里，并允许第三方插件注册自己的 Tab。",
+      "highlights": [
+        "侧栏内置文件预览/编辑、终端、Git 与子代理面板",
+        "支持第三方插件注册新 Tab（壁纸引擎等插件依赖它）",
+        "DSH Web 与桌面端通用"
+      ],
+      "tags": [
+        "侧栏",
+        "终端",
+        "Git",
+        "文件预览"
+      ],
+      "category": "ui",
+      "alsoIn": [],
+      "notes": "壁纸引擎（dsh-plugin-wallpaper-engine）要求它 ≥ 0.19.0，建议先装这个。与合集包 @linxin666/dsh-web-all 同时装可能抢占同一个侧栏位置，二选一。",
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": true,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "dsh-better-sidebar",
+      "version": "0.30.1",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 4959,
+      "downloads": 289396,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": false,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [
+          {
+            "name": "@deepseek-ai/dsh-agent",
+            "range": "^0.2.2-rc.1"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-locale",
+            "range": "^0.2.2-rc.1"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-ui-conversation",
+            "range": "^0.2.2-rc.1"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-ui-input-trigger",
+            "range": "^0.2.2-rc.1"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-ui-primitives",
+            "range": "^0.2.2-rc.1"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-ui-settings",
+            "range": "^0.2.2-rc.1"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-ui-sidebar-right",
+            "range": "^0.2.2-rc.1"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-ui-slots",
+            "range": "^0.2.2-rc.1"
+          },
+          {
+            "name": "@deepseek-ai/dsh-host-webserver",
+            "range": "^0.2.2-rc.1"
+          },
+          {
+            "name": "@deepseek-ai/dsh-llm",
+            "range": "^0.2.2-rc.1"
+          },
+          {
+            "name": "@deepseek-ai/dsh-session",
+            "range": "^0.2.2-rc.1"
+          },
+          {
+            "name": "@deepseek-ai/dsh-settings",
+            "range": "^0.2.2-rc.1"
+          },
+          {
+            "name": "@deepseek-ai/dsh-subagent",
+            "range": "^0.2.2-rc.1"
+          },
+          {
+            "name": "@deepseek-ai/dsh-tools",
+            "range": "^0.2.2-rc.1"
+          }
+        ],
+        "peerRanges": {
+          "@deepseek-ai/dsh-agent": "^0.2.2-rc.1",
+          "@deepseek-ai/dsh-client-locale": "^0.2.2-rc.1",
+          "@deepseek-ai/dsh-client-ui-conversation": "^0.2.2-rc.1",
+          "@deepseek-ai/dsh-client-ui-input-trigger": "^0.2.2-rc.1",
+          "@deepseek-ai/dsh-client-ui-primitives": "^0.2.2-rc.1",
+          "@deepseek-ai/dsh-client-ui-settings": "^0.2.2-rc.1",
+          "@deepseek-ai/dsh-client-ui-sidebar-right": "^0.2.2-rc.1",
+          "@deepseek-ai/dsh-client-ui-slots": "^0.2.2-rc.1",
+          "@deepseek-ai/dsh-host-webserver": "^0.2.2-rc.1",
+          "@deepseek-ai/dsh-llm": "^0.2.2-rc.1",
+          "@deepseek-ai/dsh-session": "^0.2.2-rc.1",
+          "@deepseek-ai/dsh-settings": "^0.2.2-rc.1",
+          "@deepseek-ai/dsh-subagent": "^0.2.2-rc.1",
+          "@deepseek-ai/dsh-tools": "^0.2.2-rc.1"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "better-sidebar-0.30.1.tgz",
+        "sizeBytes": 67371032,
+        "size": "64.3 MB",
+        "sha256": "e237ae13c463331464cc289d7ffed0573b68805f478ab48ace1b9a3fd70d16d9",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T03:31:33.886Z",
+        "error": null
+      }
+    },
+    {
+      "id": "vision-toolkit",
+      "title": "视觉工具箱（截图 OCR / 看图）",
+      "summary": "给纯文本模型装上眼睛：多图问答、长截图 OCR、UI 还原与 GUI 自动化。",
+      "highlights": [
+        "长截图与图片逐字 OCR，报错信息、表格可直接转文字",
+        "多图理解与 UI 还原",
+        "可驱动 GUI 自动化"
+      ],
+      "tags": [
+        "OCR",
+        "截图",
+        "看图",
+        "UI 还原"
+      ],
+      "category": "office",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": true,
+      "verified": false,
+      "repo": "Anionex/dsh-vision-toolkit",
+      "repoUrl": "https://github.com/Anionex/dsh-vision-toolkit",
+      "packageName": "@anionex/dsh-vision-toolkit",
+      "version": "0.1.48",
+      "sourceVersion": null,
+      "license": "MIT",
+      "stars": 934,
+      "downloads": 15235,
+      "forks": 48,
+      "ghDescription": "[dsh]为纯文本模型设计更强大的视觉工具箱：一行安装使用、粘贴图片直接识别、多张图片问答、截图到前端UI 还原等｜DeepSeek Harness-native integration for agent-vision-toolkit: image Q&A, long-screenshot OCR, UI restoration, grounding, pixel diff, Artifacts, and Web UI.",
+      "pushedAt": "2026-11-06T18:38:10Z",
+      "archived": false,
+      "compat": {
+        "ok": false,
+        "source": "install-matrix",
+        "detail": "+ @anionex/dsh-vision-toolkit 0.1.48 Done in 11.4s using pnpm v11.28.5",
+        "unmet": [
+          {
+            "name": "@deepseek-ai/dsh-agent",
+            "range": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3"
+          },
+          {
+            "name": "@deepseek-ai/dsh-api-remotes",
+            "range": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3"
+          },
+          {
+            "name": "@deepseek-ai/dsh-attachment",
+            "range": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-locale",
+            "range": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-ui-conversation",
+            "range": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-ui-input-trigger",
+            "range": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-ui-primitives",
+            "range": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-ui-settings",
+            "range": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-ui-slots",
+            "range": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-ui-tool",
+            "range": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3"
+          },
+          {
+            "name": "@deepseek-ai/dsh-credentials",
+            "range": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3"
+          },
+          {
+            "name": "@deepseek-ai/dsh-host-webserver",
+            "range": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3"
+          },
+          {
+            "name": "@deepseek-ai/dsh-llm",
+            "range": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3"
+          },
+          {
+            "name": "@deepseek-ai/dsh-session",
+            "range": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3"
+          },
+          {
+            "name": "@deepseek-ai/dsh-settings",
+            "range": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3"
+          },
+          {
+            "name": "@deepseek-ai/dsh-skill",
+            "range": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3"
+          },
+          {
+            "name": "@deepseek-ai/dsh-storage-domain",
+            "range": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3"
+          },
+          {
+            "name": "@deepseek-ai/dsh-subprocess",
+            "range": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3"
+          },
+          {
+            "name": "@deepseek-ai/dsh-tools",
+            "range": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3"
+          }
+        ],
+        "peerRanges": {
+          "@deepseek-ai/dsh-agent": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-api-remotes": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-attachment": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-client-locale": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-client-ui-conversation": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-client-ui-input-trigger": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-client-ui-primitives": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-client-ui-settings": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-client-ui-slots": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-client-ui-tool": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-credentials": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-host-webserver": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-llm": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-session": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-settings": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-skill": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-storage-domain": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-subprocess": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+          "@deepseek-ai/dsh-tools": ">=0.1.0-rc.8 <0.2.0 || ^0.1.1-rc.1 || ^0.1.2-alpha.1 || ^0.1.5-rc.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "vision-toolkit-0.1.48.tgz",
+        "sizeBytes": 9992661,
+        "size": "9.5 MB",
+        "sha256": "8d521ab48a4238ef59448ebf33b1eb79548ab2a1a9a98c3c1bc8b1a77ad8dcb0",
+        "strategy": "npm",
+        "builtAt": "2026-11-06T01:20:15.884Z",
+        "error": null
+      }
+    },
+    {
+      "id": "remote-workspace",
+      "title": "远程工作区（SSH / SFTP / 隧道）",
+      "summary": "SSH 连上任意主机后当本地工作区用：22 个 rw_* 工具、冲突感知 SFTP 镜像、内置终端、端口转发、多级跳板。",
+      "highlights": [
+        "原生「添加工作区」选远程目录，自动建本地镜像",
+        "密钥 / 密码 / 代理跳板三种连接方式",
+        "SFTP 双向同步、搜索、编辑、端口隧道",
+        "与本地会话共用同一套沙箱策略"
+      ],
+      "tags": [
+        "SSH",
+        "SFTP",
+        "跳板",
+        "隧道",
+        "终端"
+      ],
+      "category": "ssh",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": true,
+      "verified": true,
+      "repo": "flymysql/dsh-remote",
+      "repoUrl": "https://github.com/flymysql/dsh-remote",
+      "packageName": "dsh-remote",
+      "version": "0.8.72",
+      "sourceVersion": null,
+      "license": "MIT",
+      "stars": 271,
+      "downloads": 66021,
+      "forks": 46,
+      "ghDescription": "Remote-work assistant for DeepSeek Harness (DSH): SSH into any machine, pick a remote workspace, and work on it with 22 rw_* tools, conflict-aware SFTP mirror, embedded PTY terminal, port forwarding, and multi-hop jumps - under the same sandbox policy as a local session.",
+      "pushedAt": "2026-11-08T22:01:26Z",
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "install-matrix",
+        "detail": "bundles +dsh-remote",
+        "unmet": [],
+        "peerRanges": {
+          "@deepseek-ai/dsh-commands": ">=0.1.0-rc.6 <0.3.0",
+          "@deepseek-ai/dsh-host-webserver": ">=0.1.0-rc.6 <0.3.0",
+          "@deepseek-ai/dsh-tools": ">=0.1.0-rc.6 <0.3.0",
+          "@deepseek-ai/dsh-system-prompt": ">=0.1.0-rc.6 <0.3.0",
+          "@deepseek-ai/dsh-client-ui-renderer": ">=0.1.2-rc.1 <0.3.0",
+          "@deepseek-ai/dsh-client-locale": ">=0.1.2-rc.1 <0.3.0",
+          "@deepseek-ai/dsh-client-connection": ">=0.1.2-rc.1 <0.3.0"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "remote-workspace-0.8.72.tgz",
+        "sizeBytes": 1093846,
+        "size": "1.0 MB",
+        "sha256": "cccc7c46d7803deaeca77cb8923df2b60385352466f18155796bf529a7a9ac64",
+        "strategy": "npm",
+        "builtAt": "2026-11-05T16:11:56.010Z",
+        "error": null
+      }
+    },
+    {
+      "id": "email",
+      "title": "邮件收发",
+      "summary": "在 DSH 里处理邮件：浏览、搜索、下载附件，核对收件人与正文后再发出回复。",
+      "highlights": [
+        "支持 IMAP / POP3 / SMTP、Outlook OAuth 与 AgentMail",
+        "在工作台浏览邮件、搜索并下载附件",
+        "发送前逐项核对发件账号、To/Cc、正文与附件"
+      ],
+      "tags": [
+        "邮件",
+        "IMAP",
+        "Outlook"
+      ],
+      "category": "office",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": true,
+      "verified": false,
+      "repo": "STARDUSTLC666/dsh-email",
+      "repoUrl": "https://github.com/STARDUSTLC666/dsh-email",
+      "packageName": "dsh-email",
+      "version": "0.22.1",
+      "sourceVersion": null,
+      "license": "MIT",
+      "stars": 39,
+      "downloads": 0,
+      "forks": 12,
+      "ghDescription": "DeepSeek Harness 邮件工作台：多账号、HTML 回复与草稿、确认定时发送、Google/Outlook OAuth 和可选邮件任务。欢迎提交 issues 和 PR。",
+      "pushedAt": "2026-11-08T08:18:05Z",
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "install-matrix",
+        "detail": "bundles +dsh-email",
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "email-0.22.1.tgz",
+        "sizeBytes": 4203400,
+        "size": "4.0 MB",
+        "sha256": "91f267f209895f505ffabc5a46a8818439cf84c44fe3b1c9fb5cff787ba23fad",
+        "strategy": "npm",
+        "builtAt": "2026-11-06T01:39:18.504Z",
+        "error": null
+      }
+    },
+    {
+      "id": "office-suite",
+      "title": "Office 三件套",
+      "summary": "让 Agent 直接生成、读取、编辑 Excel / Word / PDF / PPT，全部本地库，不依赖外部服务。",
+      "highlights": [
+        "生成与编辑 .xlsx：单元格、公式、样式",
+        "读写 .pptx 演示文稿",
+        "PDF 生成、文本抽取、页面操作",
+        "Word .docx 生成与解析"
+      ],
+      "tags": [
+        "Excel",
+        "Word",
+        "PDF",
+        "PPT",
+        "Office"
+      ],
+      "category": "docs",
+      "alsoIn": [
+        "ppt"
+      ],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": true,
+      "verified": true,
+      "repo": "omdsh-dev/dsh-office",
+      "repoUrl": "https://github.com/omdsh-dev/dsh-office",
+      "packageName": "@huiliyi37/dsh-office",
+      "version": "0.2.5",
+      "sourceVersion": null,
+      "license": "Apache-2.0",
+      "stars": 30,
+      "downloads": 0,
+      "forks": 7,
+      "ghDescription": "办公三件套！Office document tools for DeepSeek Harness (dsh): generate, read, and edit spreadsheets (.xlsx), PDFs, and presentations (.pptx).",
+      "pushedAt": "2026-10-11T09:37:08Z",
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "install-matrix",
+        "detail": "bundles +@huiliyi37/dsh-office",
+        "unmet": [],
+        "peerRanges": {
+          "@deepseek-ai/dsh-tools": "^0.1.0-rc.5 || ^0.2.0-rc.1"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "office-suite-0.2.5.tgz",
+        "sizeBytes": 55454940,
+        "size": "52.9 MB",
+        "sha256": "a3d20faa1e2782159d34d4d49e0a73aa580d15053be549e9764461dc391a3dfe",
+        "strategy": "git",
+        "builtAt": "2026-11-05T15:57:35.209Z",
+        "error": null
+      }
+    },
+    {
+      "id": "pptwize",
+      "title": "pptwize 可编辑 PPT 生成",
+      "summary": "真正的 PowerPoint 而不是 HTML：告诉 AI 要讲什么，在本机直接产出一份能改的 .pptx，不用注册、渲染不花 API Key。",
+      "highlights": [
+        "语义 IR 进、原生 DrawingML 出，版式稳定可编辑",
+        "Agent Skill + DSH 插件双形态",
+        "无账号、无 API Key、完全本地渲染"
+      ],
+      "tags": [
+        "PPTX",
+        "可编辑",
+        "DrawingML"
+      ],
+      "category": "ppt",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": true,
+      "verified": false,
+      "repo": "liustack/pptfast",
+      "repoUrl": "https://github.com/liustack/pptwise",
+      "packageName": "@liustack/pptwise",
+      "version": "0.49.0",
+      "sourceVersion": null,
+      "license": "MIT",
+      "stars": 27,
+      "downloads": 0,
+      "forks": 2,
+      "ghDescription": "A real PowerPoint, not HTML. Tell your AI what to cover and pptwise builds an editable deck on your own machine. Agent skill + DSH plugin, no account and no API key to render. | 真正的 PPT，不是 HTML。跟 AI 说要讲什么，pptwise 在你自己电脑上做出一份能改的 PPT。Agent skill + DSH 插件，不用注册，渲染不用 API key。",
+      "pushedAt": "2026-10-23T07:51:59Z",
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "install-matrix",
+        "detail": "bundles +@liustack/pptwise",
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "pptwize-0.49.0.tgz",
+        "sizeBytes": 23299026,
+        "size": "22.2 MB",
+        "sha256": "364d44e8814a200afb70ac9e786ebd2711ded23d36daaf47afa60fe88017677d",
+        "strategy": "npm",
+        "builtAt": "2026-11-05T16:17:18.449Z",
+        "error": null
+      }
+    },
+    {
+      "id": "archify-dsh",
+      "title": "deepseek-harness",
+      "summary": "从仓库或系统描述生成经过校验的自包含交互式架构图、流程图、时序图、数据流图和生命周期图。",
+      "highlights": [],
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "env"
+      ],
+      "category": "docs",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "@tt-a1i/archify-dsh",
+      "version": "1.1.0",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 92724,
+      "downloads": 45979,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "archify-dsh-1.1.0.tgz",
+        "sizeBytes": 4495840,
+        "size": "4.3 MB",
+        "sha256": "94c0de19d38a16105507e7216b7d4fcbf9697cef62a8a3966a15d92b83de8af6",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:51:04.329Z",
+        "error": null
+      }
+    },
+    {
+      "id": "hindsight-coding-agents",
+      "title": "coding-agents",
+      "summary": "Hindsight：会学习的 Agent 长期记忆系统，自动召回/保存、知识页、深度反思与按仓库隔离的记忆银行。",
+      "highlights": [],
+      "tags": [
+        "memory"
+      ],
+      "category": "agent",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "@vectorize-io/hindsight-coding-agents",
+      "version": "0.8.6",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 59457,
+      "downloads": 97988,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "hindsight-coding-agents-0.8.6.tgz",
+        "sizeBytes": 4090410,
+        "size": "3.9 MB",
+        "sha256": "9117638158060f5afdef187368aa12973ab86c6f443d40256cc0756ccfe1e070",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:50:10.206Z",
+        "error": null
+      }
+    },
+    {
+      "id": "memory-plugin",
+      "title": "memory-plugin",
+      "summary": "面向 DeepSeek Harness 的 OpenViking 记忆与上下文插件：pre-step 自动召回与画像注入、会话捕获、`viking://` URI 防护，以及对接 OpenViking 服务端的 recall/write 记忆工具。",
+      "highlights": [],
+      "tags": [
+        "env"
+      ],
+      "category": "agent",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "@openviking/dsh-memory-plugin",
+      "version": "0.5.33",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 41708,
+      "downloads": 44353,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {
+          "@deepseek-ai/dsh-llm": ">=0.1.0-rc.6 <1.0.0-0",
+          "@deepseek-ai/dsh-mcp-client": ">=0.1.0-rc.6 <1.0.0-0",
+          "@deepseek-ai/dsh-skill-filesystem": ">=0.1.0-rc.6 <1.0.0-0"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "memory-plugin-0.5.33.tgz",
+        "sizeBytes": 111198,
+        "size": "109 KB",
+        "sha256": "33157ff1fa851d84cce143d6570c8e4e0ec786f9cfa9277ff88ec88ad201c356",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:50:11.847Z",
+        "error": null
+      }
+    },
+    {
+      "id": "dsh",
+      "title": "@next-ai-drawio/dsh",
+      "summary": "dsh 的 draw.io 绘图插件：通过 next-ai-drawio MCP 服务器作图，点回复里的链接在右侧栏打开实时预览，可以手动修改图，AI 的每次修改都是可以恢复的版本。需 Node.js 18+，首次使用由 npx 下载 MCP 服务器。",
+      "highlights": [],
+      "tags": [
+        "tools"
+      ],
+      "category": "dev",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "@next-ai-drawio/dsh",
+      "version": "0.1.0",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 36749,
+      "downloads": 1108,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "dsh-0.1.0.tgz",
+        "sizeBytes": 7302,
+        "size": "7 KB",
+        "sha256": "744d7aed943b67a357eca2510aa0813f1adadc5ef00ed221f313611844b713ff",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:50:13.522Z",
+        "error": null
+      }
+    },
+    {
+      "id": "weknora",
+      "title": "weknora",
+      "summary": "把 WeKnora 知识库接入 dsh 的四个只读工具：列出知识库、混合检索原文片段、按顺序还原单篇文档，以及直接取用 WeKnora 自己带引用的 RAG 或 ReAct agent 回答（含可续聊的 session id）。",
+      "highlights": [],
+      "tags": [
+        "tools"
+      ],
+      "category": "dev",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "@wxg-prc-cpg/dsh-weknora",
+      "version": "0.1.0",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 36302,
+      "downloads": 8599,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "weknora-0.1.0.tgz",
+        "sizeBytes": 31156,
+        "size": "30 KB",
+        "sha256": "76ec2c7bea215e821cf3a6621c7129d676ad45b3f6f54c8014dd813772aecf88",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:50:15.221Z",
+        "error": null
+      }
+    },
+    {
+      "id": "dshmarket",
+      "title": "dsh-market",
+      "summary": "在 DeepSeek Harness 设置页内浏览、搜索并安装社区插件，支持分类筛选、一键更新与停用，以及主题切换与配置备份。",
+      "highlights": [],
+      "tags": [
+        "shell",
+        "dynamic-code",
+        "fs-write",
+        "fs-read",
+        "network"
+      ],
+      "category": "dev",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "dshmarket",
+      "version": "1.73.16",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 10295,
+      "downloads": 1026119,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {
+          "@deepseek-ai/dsh-settings": "^0.1.0-rc.7 || ^0.1.1-rc.2 || ^0.1.2-alpha.2 || ^0.2.0-rc.1 || ^0.2.1-alpha.3 || ^0.2.1-rc.1"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "dshmarket-1.73.16.tgz",
+        "sizeBytes": 1569593,
+        "size": "1.5 MB",
+        "sha256": "777be1aae2c3e186da09e2b1c39a361ad5b456e479a9663a9dfd1c1a134abc5d",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T03:02:27.375Z",
+        "error": null
+      }
+    },
+    {
+      "id": "task-board",
+      "title": "task-board",
+      "summary": "侧边栏多列任务看板：卡片交给真实 DSH 智能体会话执行，支持 cron 定时（Host 侧到点执行，关浏览器也生效）。",
+      "highlights": [],
+      "tags": [
+        "ui"
+      ],
+      "category": "ui",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "@linxin666/dsh-client-ui-task-board",
+      "version": "0.4.16",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 10172,
+      "downloads": 125382,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "task-board-0.4.16.tgz",
+        "sizeBytes": 1485935,
+        "size": "1.4 MB",
+        "sha256": "520e2d5780c30ece67ee36dee52db7a2586ba0d1bc57f84654677cff62067ebc",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:40:06.944Z",
+        "error": null
+      }
+    },
+    {
+      "id": "web-all",
+      "title": "web-all",
+      "summary": "DSH Web UI 插件与皮肤合集：任务看板、git 图、右侧面板、远程移动端 UI、桌宠、实时 token 统计与皮肤中心。",
+      "highlights": [],
+      "tags": [
+        "dynamic-code",
+        "network",
+        "credentials"
+      ],
+      "category": "ui",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "@linxin666/dsh-web-all",
+      "version": "0.4.16",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 10172,
+      "downloads": 103570,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "web-all-0.4.16.tgz",
+        "sizeBytes": 56052501,
+        "size": "53.5 MB",
+        "sha256": "e229fe76a904aa3cadb1f4a817f052c0e27b3d46b79e03f7a8dcda9834a1b5c5",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:43:38.494Z",
+        "error": null
+      }
+    },
+    {
+      "id": "skill-explorer",
+      "title": "skill-explorer",
+      "summary": "技能中心：按来源分级浏览已加载的全部 skill，启用/禁用模型调用、创建新技能、删除进可恢复回收站。",
+      "highlights": [],
+      "tags": [
+        "skill"
+      ],
+      "category": "agent",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "@linxin666/dsh-client-ui-skill-explorer",
+      "version": "0.4.16",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 9959,
+      "downloads": 151282,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "skill-explorer-0.4.16.tgz",
+        "sizeBytes": 126825,
+        "size": "124 KB",
+        "sha256": "841ec6b34186c4bdf34a34efb36543a8ba7fbaf0fc363c9ccf8c325e5ef3f122",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:38:17.179Z",
+        "error": null
+      }
+    },
+    {
+      "id": "git-graph",
+      "title": "git-graph",
+      "summary": "输入框上方提供 Git 分支选择器，并把分支泳道与提交历史画成图谱，沿着时间线找到任意变更。",
+      "highlights": [],
+      "tags": [
+        "git"
+      ],
+      "category": "dev",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "@linxin666/dsh-client-ui-git-graph",
+      "version": "0.4.14",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 9959,
+      "downloads": 116042,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "git-graph-0.4.14.tgz",
+        "sizeBytes": 298866,
+        "size": "292 KB",
+        "sha256": "36ce87fdca51d9d634d1cd0ed66d447e9566f6f90a99e25e783d77a3dcb7be9b",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:52:25.199Z",
+        "error": null
+      }
+    },
+    {
+      "id": "remote-web-ui",
+      "title": "remote-web-ui",
+      "summary": "手机/PC 远程操控 dsh web 工作区：扫码配对、令牌门控通道、SSE 实时同步，提供移动端与完整桌面 GUI 两种远程形态。",
+      "highlights": [],
+      "tags": [
+        "remote"
+      ],
+      "category": "ssh",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "@linxin666/dsh-remote-web-ui",
+      "version": "0.4.16",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 9959,
+      "downloads": 112804,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "remote-web-ui-0.4.16.tgz",
+        "sizeBytes": 2219406,
+        "size": "2.1 MB",
+        "sha256": "52c817e904d80b98cd1b669b9b70f5fdbd41823f7f1f941628d7582ba24b6044",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:56:58.316Z",
+        "error": null
+      }
+    },
+    {
+      "id": "ssh",
+      "title": "ssh",
+      "summary": "SSH 远程运维面板：Web 终端、SFTP 传输、本地端口转发与一条命令并发集群执行，Agent 与面板共用同一份主机配置。",
+      "highlights": [],
+      "tags": [
+        "remote"
+      ],
+      "category": "ssh",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "@linxin666/dsh-ssh",
+      "version": "0.4.16",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 9959,
+      "downloads": 108816,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "ssh-0.4.16.tgz",
+        "sizeBytes": 2890698,
+        "size": "2.8 MB",
+        "sha256": "218137eacca215204f32868610e9d17f43e768b487b11ed8c57b64d2d2195b5d",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T03:02:22.077Z",
+        "error": null
+      }
+    },
+    {
+      "id": "browser-skill-dsh-plugin",
+      "title": "plugin-browserskill",
+      "summary": "BrowserSkill 的 DeepSeek Harness 浏览器自动化桥接插件，通过原生浏览器工具控制可见的 Chrome 和 Edge Agent Window，支持可访问性与 VOM 页面观察、截图、隔离的多会话控制和 Web UI 实时观察浮层。",
+      "highlights": [],
+      "tags": [
+        "browser"
+      ],
+      "category": "model",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "@wxg-prc-cpg/browser-skill-dsh-plugin",
+      "version": "0.4.2",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 9929,
+      "downloads": 45458,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {
+          "@deepseek-ai/dsh-attachment": "^0.1.5-rc.3 || ^0.2.0-rc.1",
+          "@deepseek-ai/dsh-client-ui-primitives": "^0.1.5-rc.3 || ^0.2.0-rc.1",
+          "@deepseek-ai/dsh-client-ui-tool": "^0.1.5-rc.3 || ^0.2.0-rc.1",
+          "@deepseek-ai/dsh-llm": "^0.1.5-rc.3 || ^0.2.0-rc.1",
+          "@deepseek-ai/dsh-tools": "^0.1.5-rc.3 || ^0.2.0-rc.1"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "browser-skill-dsh-plugin-0.4.2.tgz",
+        "sizeBytes": 137080,
+        "size": "134 KB",
+        "sha256": "b464fa47f692fb9a28c25d968fe287815319dfca98252b866c80f468b2bcedcc",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:50:16.947Z",
+        "error": null
+      }
+    },
+    {
+      "id": "wallpaper-engine",
+      "title": "dsh-wallpaper-engine",
+      "summary": "前置要求：DeepSeek Harness 0.1.5-rc.1+（DSH Desktop ≥ 2.0.7）且 dsh-better-sidebar ≥ 0.19.0，安装或更新本插件前请先更新两者。把本机 Wallpaper Engine 的 Video/Web 壁纸实时播放到聊天界面后方，Scene 壁纸由内置渲染器输出完整场景帧，支持内容分级/类型过滤、自定义壁纸上传与 iOS 液态玻璃设置窗口。",
+      "highlights": [],
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "env"
+      ],
+      "category": "ui",
+      "alsoIn": [],
+      "notes": "前置要求：dsh-better-sidebar ≥ 0.19.0，先装侧边栏工作台再装它。",
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "dsh-plugin-wallpaper-engine",
+      "version": "1.4.2",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 5528,
+      "downloads": 135476,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {
+          "@deepseek-ai/dsh-client-runtime": ">=0.1.5-rc.1",
+          "@deepseek-ai/dsh-client-ui-slots": ">=0.1.5-rc.1",
+          "@deepseek-ai/dsh-host-webserver": ">=0.1.5-rc.1"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "wallpaper-engine-1.4.2.tgz",
+        "sizeBytes": 30786833,
+        "size": "29.4 MB",
+        "sha256": "f7db5c17e0bf3fc2259e71a3da49858f4fc5af1e64d544eb8bed3f4e0dfa8ac5",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:38:41.483Z",
+        "error": null
+      }
+    },
+    {
+      "id": "skillhub-dsh",
+      "title": "dsh",
+      "summary": "在 DeepSeek Harness 内浏览、搜索 SkillHub 技能，并管理本地技能的安装、更新和卸载。适配 DSH 0.2.0-rc.2 与 0.2.1-rc.2，暂不兼容 0.2.1-rc.3。",
+      "highlights": [],
+      "tags": [
+        "skill"
+      ],
+      "category": "agent",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "@astron-team/skillhub-dsh",
+      "version": "0.6.2",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 5358,
+      "downloads": 1881,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {
+          "@deepseek-ai/dsh-fs": "0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.5",
+          "@deepseek-ai/dsh-home-paths": "0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.5",
+          "@deepseek-ai/dsh-sandbox": "0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.5",
+          "@deepseek-ai/dsh-sandbox-policy": "0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.5",
+          "@deepseek-ai/dsh-session": "0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.5",
+          "@deepseek-ai/dsh-session-query": "0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.5",
+          "@deepseek-ai/dsh-skill-filesystem": "0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.5",
+          "@deepseek-ai/dsh-tools": "0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.5",
+          "@deepseek-ai/dsh-typert-protocol": "0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.5",
+          "@deepseek-ai/dsh-user-questions": "0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.5",
+          "@deepseek-ai/dsh-atomic-write": "0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.5"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "skillhub-dsh-0.6.2.tgz",
+        "sizeBytes": 3817369,
+        "size": "3.6 MB",
+        "sha256": "e41a8752d8ba66456ae923f8be935bb31695375dfe003ffcbd815f06e2a93910",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:52:17.785Z",
+        "error": null
+      }
+    },
+    {
+      "id": "pet",
+      "title": "pet",
+      "summary": "DSH Web UI 桌面宠物，Windows / macOS / Linux 三端可用：浏览器浮层或透明置顶桌面窗口，106 个透明动画、带挤压与粒子的甩抛反弹物理、随会话事件实时联动的工作状态气泡、碎碎念与带持久记忆的对话、余额展示、表情包配图、多开同屏，并支持直接放入的自定义动画与宠物种类（pet pack）。",
+      "highlights": [],
+      "tags": [
+        "fun"
+      ],
+      "category": "ui",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "dsh-pet",
+      "version": "0.4.7",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 5347,
+      "downloads": 458201,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {
+          "@deepseek-ai/dsh-agent-default-model": "^0.2.0-rc.1",
+          "@deepseek-ai/dsh-client-connection": "^0.2.0-rc.1",
+          "@deepseek-ai/dsh-client-ui-primitives": "^0.2.0-rc.1",
+          "@deepseek-ai/dsh-client-ui-slots": "^0.2.0-rc.1",
+          "@deepseek-ai/dsh-commands": "^0.2.0-rc.1",
+          "@deepseek-ai/dsh-credentials": "^0.2.0-rc.1",
+          "@deepseek-ai/dsh-home-paths": "^0.2.0-rc.1",
+          "@deepseek-ai/dsh-host-webserver": "^0.2.0-rc.1",
+          "@deepseek-ai/dsh-llm": "^0.2.0-rc.1"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "pet-0.4.7.tgz",
+        "sizeBytes": 81246089,
+        "size": "77.5 MB",
+        "sha256": "84bc429507f77bf5a0fa9754adc51803a798ec766526704d00ebe4da6518be39",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T03:03:26.993Z",
+        "error": null
+      }
+    },
+    {
+      "id": "ops",
+      "title": "dsh-ops",
+      "summary": "为 Windows 的 DSH 提供 bash、PowerShell 7 及 Rust 高性能工具，减少 token 消耗。",
+      "highlights": [],
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "credentials"
+      ],
+      "category": "dev",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "dsh-ops",
+      "version": "0.5.2",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 5074,
+      "downloads": 146506,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "ops-0.5.2.tgz",
+        "sizeBytes": 70722173,
+        "size": "67.4 MB",
+        "sha256": "b68f43315ffce208345b650f37c6471c70aefade7240a3d1fc6654500ae90e3f",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:38:09.093Z",
+        "error": null
+      }
+    },
+    {
+      "id": "modlens",
+      "title": "modlens",
+      "summary": "为纯文本模型架起视觉桥梁：粘贴图片，输出结构化 JSON 证据（OCR、版面、语义）。",
+      "highlights": [],
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "env"
+      ],
+      "category": "model",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "@liustack/modlens",
+      "version": "3.27.3",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 4725,
+      "downloads": 253605,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "modlens-3.27.3.tgz",
+        "sizeBytes": 838527,
+        "size": "819 KB",
+        "sha256": "8f5ddc2d574c2ac50cbf93c88db8a4b44e45c02f27698a180d1ff3cee765d187",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:50:21.559Z",
+        "error": null
+      }
+    },
+    {
+      "id": "context",
+      "title": "dsh-context",
+      "summary": "DSH 上下文洞察面板：Context 仪表盘 + /context命令 + Context 浏览器，查看 Context的分类组成、内容详情、演进趋势、压缩/注入事件、统计等一站式 Context 全生命周期管理。",
+      "highlights": [],
+      "tags": [
+        "fs-write",
+        "network"
+      ],
+      "category": "ops",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "dsh-context",
+      "version": "0.83.0",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 4440,
+      "downloads": 385738,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {
+          "@deepseek-ai/dsh-client-ui-primitives": ">=0.2.0-rc.2 || >=0.2.1-rc.2 || >=0.2.2-rc.1",
+          "@deepseek-ai/dsh-session": ">=0.2.0-rc.2 || >=0.2.1-rc.2 || >=0.2.2-rc.1"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "context-0.83.0.tgz",
+        "sizeBytes": 1024417,
+        "size": "1000 KB",
+        "sha256": "6a16a863db4795a4ede0b614df1051c47b7e56f7c7f30bf743451f0ffc181f1f",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:48:54.608Z",
+        "error": null
+      }
+    },
+    {
+      "id": "billion-context",
+      "title": "billion-context",
+      "summary": "billion-context官方版：上下文压缩插件，兼顾小窗口(100k上下文足矣)省token(省5倍token)和超长会话(数月级别几十亿token单会话)。",
+      "highlights": [],
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "credentials"
+      ],
+      "category": "agent",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "billion-context",
+      "version": "0.1.213",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 4316,
+      "downloads": 3033041,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "billion-context-0.1.213.tgz",
+        "sizeBytes": 33693486,
+        "size": "32.1 MB",
+        "sha256": "bfe54b8723641d1c3d751187e664d583e3318ebd9e54d7c95c3296ceebf3120d",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:50:03.039Z",
+        "error": null
+      }
+    },
+    {
+      "id": "skin-maid-atelier",
+      "title": "maid-atelier",
+      "summary": "DSH Web 鲸鱼娘皮肤系列（深海女仆工坊 maid-atelier）。",
+      "highlights": [],
+      "tags": [
+        "fs-read"
+      ],
+      "category": "ui",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "@smalltailqwq/dsh-client-ui-skin-maid-atelier",
+      "version": "0.1.10",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 3054,
+      "downloads": 91238,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "skin-maid-atelier-0.1.10.tgz",
+        "sizeBytes": 7040891,
+        "size": "6.7 MB",
+        "sha256": "aac2dc4f36888ad9e5d6034c063062c241be430b78e8da341216865460a78537",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:49:03.610Z",
+        "error": null
+      }
+    },
+    {
+      "id": "pocket",
+      "title": "dsh-pocket",
+      "summary": "手机远程访问 DSH Web 界面：扫码即用局域网或公网（cloudflared 隧道）访问，实时同屏、移动端适配布局，带设置页管理。",
+      "highlights": [],
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "env"
+      ],
+      "category": "ops",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "dsh-pocket",
+      "version": "2.12.0",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 2685,
+      "downloads": 21635,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "pocket-2.12.0.tgz",
+        "sizeBytes": 625277,
+        "size": "611 KB",
+        "sha256": "4063a7c3b50fbb09729307779c444d662572869b4164f4bddffc2347441f0b66",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:52:31.940Z",
+        "error": null
+      }
+    },
+    {
+      "id": "agent-teams",
+      "title": "dsh-agent-teams",
+      "summary": "AgentTeams 多智能体团队。",
+      "highlights": [],
+      "tags": [
+        "fs-write",
+        "fs-read",
+        "network",
+        "subagent",
+        "llm"
+      ],
+      "category": "agent",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "@nanmicoder/dsh-agent-teams",
+      "version": "0.1.29",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 2647,
+      "downloads": 56682,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {
+          "@deepseek-ai/dsh-agent": "*",
+          "@deepseek-ai/dsh-api-session-controller": "*",
+          "@deepseek-ai/dsh-client-connection": "*",
+          "@deepseek-ai/dsh-client-locale": "*",
+          "@deepseek-ai/dsh-client-store": "*",
+          "@deepseek-ai/dsh-client-ui-chat": "*",
+          "@deepseek-ai/dsh-client-ui-conversation": "*",
+          "@deepseek-ai/dsh-client-ui-layout": "*",
+          "@deepseek-ai/dsh-client-ui-model-selection": "*",
+          "@deepseek-ai/dsh-client-ui-primitives": "*",
+          "@deepseek-ai/dsh-client-ui-renderer": "*",
+          "@deepseek-ai/dsh-client-ui-session": "*",
+          "@deepseek-ai/dsh-client-ui-slots": "*",
+          "@deepseek-ai/dsh-commands": "*",
+          "@deepseek-ai/dsh-llm": "*",
+          "@deepseek-ai/dsh-session": "*",
+          "@deepseek-ai/dsh-session-projection": "*",
+          "@deepseek-ai/dsh-subagent": "*",
+          "@deepseek-ai/dsh-system-prompt": "*",
+          "@deepseek-ai/dsh-tools": "*",
+          "@deepseek-ai/dsh-util-values": "*"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "agent-teams-0.1.29.tgz",
+        "sizeBytes": 2187784,
+        "size": "2.1 MB",
+        "sha256": "8377d65c8f5c37453785e345e02ab757a1350097b2436a3c976b7776e6c95650",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:52:20.641Z",
+        "error": null
+      }
+    },
+    {
+      "id": "ai-novel-writer",
+      "title": "ai-novel-writer",
+      "summary": "安装专用 AI 小说创作预设与工作台：提供带修订号的本地项目资产、紧凑侧边工作台，以及需要原生审批的逐文件变更。",
+      "highlights": [],
+      "tags": [
+        "workflow"
+      ],
+      "category": "agent",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "@ethanyoq/dsh-ai-novel-writer",
+      "version": "0.1.0",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 2265,
+      "downloads": 1544,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": false,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [
+          {
+            "name": "@deepseek-ai/dsh-agent",
+            "range": "0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-agent-instructions",
+            "range": "0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-agent-presets",
+            "range": "0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-brand",
+            "range": "0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-connection",
+            "range": "0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-runtime",
+            "range": "0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-ui-layout",
+            "range": "0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-ui-primitives",
+            "range": "0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-ui-settings-plugins",
+            "range": "0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-ui-sidebar",
+            "range": "0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-ui-slots",
+            "range": "0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-llm",
+            "range": "0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-persona",
+            "range": "0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-scope",
+            "range": "0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-session",
+            "range": "0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-tools",
+            "range": "0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-workspace",
+            "range": "0.1.0-rc.6"
+          }
+        ],
+        "peerRanges": {
+          "@deepseek-ai/dsh-agent": "0.1.0-rc.6",
+          "@deepseek-ai/dsh-agent-instructions": "0.1.0-rc.6",
+          "@deepseek-ai/dsh-agent-presets": "0.1.0-rc.6",
+          "@deepseek-ai/dsh-brand": "0.1.0-rc.6",
+          "@deepseek-ai/dsh-client-connection": "0.1.0-rc.6",
+          "@deepseek-ai/dsh-client-runtime": "0.1.0-rc.6",
+          "@deepseek-ai/dsh-client-ui-layout": "0.1.0-rc.6",
+          "@deepseek-ai/dsh-client-ui-primitives": "0.1.0-rc.6",
+          "@deepseek-ai/dsh-client-ui-settings-plugins": "0.1.0-rc.6",
+          "@deepseek-ai/dsh-client-ui-sidebar": "0.1.0-rc.6",
+          "@deepseek-ai/dsh-client-ui-slots": "0.1.0-rc.6",
+          "@deepseek-ai/dsh-llm": "0.1.0-rc.6",
+          "@deepseek-ai/dsh-persona": "0.1.0-rc.6",
+          "@deepseek-ai/dsh-scope": "0.1.0-rc.6",
+          "@deepseek-ai/dsh-session": "0.1.0-rc.6",
+          "@deepseek-ai/dsh-tools": "0.1.0-rc.6",
+          "@deepseek-ai/dsh-workspace": "0.1.0-rc.6"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "ai-novel-writer-0.1.0.tgz",
+        "sizeBytes": 137621,
+        "size": "134 KB",
+        "sha256": "eb13ac4113c447e96c8e2ea6ca1a7f23a5c52929792b4328d2b236feef170fb6",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:52:23.195Z",
+        "error": null
+      }
+    },
+    {
+      "id": "cc-safety-net",
+      "title": "cc-safety-net",
+      "summary": "执行前守卫，在工具调用运行前拦截破坏性 Git 与文件系统命令，以及对 SSH 密钥、.env 等机密文件的访问。",
+      "highlights": [],
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "credentials"
+      ],
+      "category": "dev",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "cc-safety-net",
+      "version": "2.7.7",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 1900,
+      "downloads": 126068,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "cc-safety-net-2.7.7.tgz",
+        "sizeBytes": 670542,
+        "size": "655 KB",
+        "sha256": "a0b6d3c094ee32aa4a8b21f1f0bfdfe0cc69a727ad9dcc77a28c447c6d86dc86",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:54:35.694Z",
+        "error": null
+      }
+    },
+    {
+      "id": "connect-workbuddy",
+      "title": "dsh-connect-workbuddy",
+      "summary": "将本机登录的 WorkBuddy 模型（国内版与国际版）接入 DSH，每次刷新按上游目录读取每个模型的积分倍率，支持逐模型图片输入开关、带自动换号的账号池、手动每日签到，以及卡片与输入框里的只读积分胶囊读数。",
+      "highlights": [],
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "env"
+      ],
+      "category": "model",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "dsh-connect-workbuddy",
+      "version": "5.21.2",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 1244,
+      "downloads": 80185,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {
+          "@deepseek-ai/dsh-atomic-write": ">=0.1.7-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-attachment": ">=0.1.7-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-client-ui-primitives": ">=0.1.7-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-client-ui-renderer": ">=0.1.7-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-client-ui-settings": ">=0.1.7-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-home-paths": ">=0.1.7-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-host-webserver": ">=0.1.7-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-llm": ">=0.1.7-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-llm-pi-ai": ">=0.1.7-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-settings": ">=0.1.7-rc.1 <0.3.0-0"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "connect-workbuddy-5.21.2.tgz",
+        "sizeBytes": 3279546,
+        "size": "3.1 MB",
+        "sha256": "0265437b19200130bf242f7e22db4e03646d00fa2531766eee17c8d2158c9f18",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:49:06.382Z",
+        "error": null
+      }
+    },
+    {
+      "id": "vision-router",
+      "title": "dsh-vision-router",
+      "summary": "为纯文本 Agent 提供视觉能力：内置免 Key 视觉链 + 像素级视觉工具（看图问答、定位、裁剪、像素对比、取色、OCR、矢量化、抠图、截图）；粘贴图片即可用。",
+      "highlights": [],
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "credentials"
+      ],
+      "category": "model",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "dsh-vision-router",
+      "version": "3.1.5",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 1211,
+      "downloads": 54296,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {
+          "@deepseek-ai/dsh-anonymous-user-id": ">=0.1.5-rc.1 <0.2.0-0 || >=0.2.0-rc.2 <0.3.0-0",
+          "@deepseek-ai/dsh-llm-deepseek": ">=0.1.5-rc.1 <0.2.0-0 || >=0.2.0-rc.2 <0.3.0-0",
+          "@deepseek-ai/dsh-storage-domain": ">=0.1.5-rc.1 <0.2.0-0 || >=0.2.0-rc.2 <0.3.0-0"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "vision-router-3.1.5.tgz",
+        "sizeBytes": 21326580,
+        "size": "20.3 MB",
+        "sha256": "a24fc32e96bc74bc79f85e64673aafcddaf154ef452d2ba51bebeb480c9a4605",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:50:58.708Z",
+        "error": null
+      }
+    },
+    {
+      "id": "image-gen",
+      "title": "dsh-image-gen",
+      "summary": "为 DeepSeek Harness 提供原生对话生图能力：直接让 Agent 画图，插件自动完成生成并把结果保留在当前会话中。",
+      "highlights": [],
+      "tags": [
+        "fs-write",
+        "fs-read",
+        "network",
+        "credentials",
+        "env"
+      ],
+      "category": "agent",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "dsh-image-gen",
+      "version": "0.11.1",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 1075,
+      "downloads": 63887,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "image-gen-0.11.1.tgz",
+        "sizeBytes": 31068691,
+        "size": "29.6 MB",
+        "sha256": "f4e8b2f2e87665d0ec45483884b9affad017e7a5969b94293e11661515c35403",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:39:07.863Z",
+        "error": null
+      }
+    },
+    {
+      "id": "modsearch",
+      "title": "modsearch",
+      "summary": "纯文本 agent 的联网搜索桥：搜索网页与 X，返回结构化 JSON 证据（search/fetch/引用）。",
+      "highlights": [],
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "env"
+      ],
+      "category": "model",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "@liustack/modsearch",
+      "version": "5.10.12",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 911,
+      "downloads": 62248,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "modsearch-5.10.12.tgz",
+        "sizeBytes": 635222,
+        "size": "620 KB",
+        "sha256": "b43dee07a461579bf4581ff7d207a3b4f1496dba6634d07aaf76e5f01eb45cb1",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:50:19.387Z",
+        "error": null
+      }
+    },
+    {
+      "id": "api-relay-audit",
+      "title": "api-relay-audit",
+      "summary": "从 DeepSeek Harness 对 AI API 中转站和 LLM 代理运行本地安全审计，生成 Markdown 报告，覆盖提示词注入、模型替换信号、工具调用改写、错误泄漏、流完整性和按 profile 启用的 Web3 风险。",
+      "highlights": [],
+      "tags": [
+        "shell",
+        "fs-read",
+        "credentials",
+        "llm"
+      ],
+      "category": "dev",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "dsh-api-relay-audit",
+      "version": "2.5.0",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 904,
+      "downloads": 839,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": false,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [
+          {
+            "name": "@deepseek-ai/dsh-commands",
+            "range": "0.1.0-rc.6 || 0.1.7-rc.2 || 0.2.0-rc.2"
+          },
+          {
+            "name": "@deepseek-ai/dsh-credentials",
+            "range": "0.1.0-rc.6 || 0.1.7-rc.2 || 0.2.0-rc.2"
+          },
+          {
+            "name": "@deepseek-ai/dsh-llm",
+            "range": "0.1.0-rc.6 || 0.1.7-rc.2 || 0.2.0-rc.2"
+          },
+          {
+            "name": "@deepseek-ai/dsh-settings",
+            "range": "0.1.0-rc.6 || 0.1.7-rc.2 || 0.2.0-rc.2"
+          },
+          {
+            "name": "@deepseek-ai/dsh-subprocess",
+            "range": "0.1.0-rc.6 || 0.1.7-rc.2 || 0.2.0-rc.2"
+          }
+        ],
+        "peerRanges": {
+          "@deepseek-ai/dsh-commands": "0.1.0-rc.6 || 0.1.7-rc.2 || 0.2.0-rc.2",
+          "@deepseek-ai/dsh-credentials": "0.1.0-rc.6 || 0.1.7-rc.2 || 0.2.0-rc.2",
+          "@deepseek-ai/dsh-llm": "0.1.0-rc.6 || 0.1.7-rc.2 || 0.2.0-rc.2",
+          "@deepseek-ai/dsh-settings": "0.1.0-rc.6 || 0.1.7-rc.2 || 0.2.0-rc.2",
+          "@deepseek-ai/dsh-subprocess": "0.1.0-rc.6 || 0.1.7-rc.2 || 0.2.0-rc.2"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "api-relay-audit-2.5.0.tgz",
+        "sizeBytes": 107757,
+        "size": "105 KB",
+        "sha256": "9afbd20773ffd7f2eb1db0b15151b02eec544da0ec761e1aca4d9137d29d6684",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:54:37.508Z",
+        "error": null
+      }
+    },
+    {
+      "id": "ads",
+      "title": "dsh-ads",
+      "summary": "2005 年中文站点风格的整活广告插件：侧栏广告/信息流/角落弹窗 + 假关闭叉，素材全虚构。",
+      "highlights": [],
+      "tags": [
+        "shell",
+        "network",
+        "env"
+      ],
+      "category": "ui",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "@nagi-ovo/dsh-ads",
+      "version": "0.1.4",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 707,
+      "downloads": 2260,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {
+          "@deepseek-ai/dsh-client-locale": "^0.1.0-rc.6 || ^0.2.0-rc.1 || ^0.2.1-0"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "ads-0.1.4.tgz",
+        "sizeBytes": 20764079,
+        "size": "19.8 MB",
+        "sha256": "f2f18caf5516d059189c4ee801559e32a796e601981a0aa7d1662cdf68ed2f1a",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T03:03:48.692Z",
+        "error": null
+      }
+    },
+    {
+      "id": "clearai-dsh",
+      "title": "clearai-dsh",
+      "summary": "以证据为准的研究用智能体预设：每一步只能靠系统核验过的观测推进，L3 以上的结论交给独立评估者，整场会话折成一份可重放的账本，并长成可浏览的领域本体。需要 DSH >=0.1.7-alpha.1。",
+      "highlights": [],
+      "tags": [
+        "shell",
+        "fs-read",
+        "network",
+        "env"
+      ],
+      "category": "agent",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "clearai-dsh",
+      "version": "0.6.0",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 689,
+      "downloads": 7493,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "clearai-dsh-0.6.0.tgz",
+        "sizeBytes": 1693688,
+        "size": "1.6 MB",
+        "sha256": "0e89b2a3102ce87ca6fc153ac6523c49f482e03964d69695cdeaf818047d58b9",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T03:11:51.769Z",
+        "error": null
+      }
+    },
+    {
+      "id": "cost-meter",
+      "title": "dsh-cost-meter",
+      "summary": "会话与当日 API 费用统计、预算图框（已用%）、官方余额、历史看板，支持峰谷计价与官方价格一键同步。",
+      "highlights": [],
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "credentials"
+      ],
+      "category": "ops",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "dsh-cost-meter",
+      "version": "1.9.60",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 642,
+      "downloads": 136908,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {
+          "@deepseek-ai/dsh-credentials": ">=0.2.0-rc.1 <0.3.0-0 || >=0.2.1-0 <0.3.0-0 || >=0.2.2-0 <0.3.0-0",
+          "@deepseek-ai/dsh-home-paths": ">=0.2.0-rc.1 <0.3.0-0 || >=0.2.1-0 <0.3.0-0 || >=0.2.2-0 <0.3.0-0"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "cost-meter-1.9.60.tgz",
+        "sizeBytes": 6750058,
+        "size": "6.4 MB",
+        "sha256": "5fd486b6ec7d08bd2516a1e1230ce8cba4a71eda525233ca4b0d05139e81a37e",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:49:00.366Z",
+        "error": null
+      }
+    },
+    {
+      "id": "memory",
+      "title": "dsh-memory",
+      "summary": "白箱AGI架构探索：元认知（自我认知循环）、持续学习（知识飞轮）、世界模型（条件空间+语义时空图）、自我改进（自举纪律）、零LLM白箱管线与可审计信任护栏。",
+      "highlights": [],
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "env"
+      ],
+      "category": "agent",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "@furongjun1999/dsh-memory",
+      "version": "0.9.23",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 613,
+      "downloads": 30692,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {
+          "@deepseek-ai/dsh-llm": ">=0.1.0-rc.6",
+          "@deepseek-ai/dsh-session": ">=0.1.0-rc.6",
+          "@deepseek-ai/dsh-system-prompt": ">=0.1.0-rc.6",
+          "@deepseek-ai/dsh-tools": ">=0.1.0-rc.6"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "memory-0.9.23.tgz",
+        "sizeBytes": 8588835,
+        "size": "8.2 MB",
+        "sha256": "ce67afc424dbd2b4b07f41311d24740e468ee92fdc9d204bd0ae967009ffa7ec",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:40:03.157Z",
+        "error": null
+      }
+    },
+    {
+      "id": "skills-manager",
+      "title": "dsh-skills-manager",
+      "summary": "在设置里管理本地 DSH 技能，并只读查看公共 Agent 技能。",
+      "highlights": [],
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "env"
+      ],
+      "category": "dev",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "@michengai/dsh-skills-manager",
+      "version": "1.3.1",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 444,
+      "downloads": 190744,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {
+          "@deepseek-ai/dsh-client-locale": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-client-ui-primitives": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-client-ui-slots": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-host-webserver": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-session": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-skill": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-tools": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-web-app": ">=0.2.0-rc.1 <0.3.0-0"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "skills-manager-1.3.1.tgz",
+        "sizeBytes": 1281803,
+        "size": "1.2 MB",
+        "sha256": "ceaa971a7bc090c7999c7f4727817e3e7cea475bb2451bc0456ae509d65e95dd",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:54:33.531Z",
+        "error": null
+      }
+    },
+    {
+      "id": "archive-manager",
+      "title": "dsh-archive-manager",
+      "summary": "在设置里增加已归档会话页，可按工作区搜索、恢复和删除已归档会话。",
+      "highlights": [],
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "env"
+      ],
+      "category": "agent",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "@michengai/dsh-archive-manager",
+      "version": "1.2.8",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 304,
+      "downloads": 105441,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {
+          "@deepseek-ai/dsh-client-connection": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-client-locale": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-client-ui-conversation": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-client-ui-primitives": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-client-ui-sidebar": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-client-ui-workspace": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-host-webserver": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-session": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-session-format-catalog": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-session-projection-cache": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-spill-local": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-storage-domain": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-typert-protocol": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-typert-registry": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-workspace": ">=0.2.0-rc.1 <0.3.0-0"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "archive-manager-1.2.8.tgz",
+        "sizeBytes": 714998,
+        "size": "698 KB",
+        "sha256": "328e262263f78f82e120fe6b258302702fcfbd2fd14f30a18e27923013c6f140",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:50:05.979Z",
+        "error": null
+      }
+    },
+    {
+      "id": "oidc",
+      "title": "oidc",
+      "summary": "可配置的 OIDC 登录与令牌授权模型接入，支持 LiteLLM 和显式启用的 oidc-llm 集成，提供独立 DSH Web 后端。",
+      "highlights": [],
+      "tags": [
+        "identity"
+      ],
+      "category": "ops",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "@eduwork/dsh-oidc",
+      "version": "0.3.3",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 301,
+      "downloads": 2957,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {
+          "@deepseek-ai/dsh-api-remotes": ">=0.2.1-rc.2 <0.3.0-0 || 0.2.2-rc.1",
+          "@deepseek-ai/dsh-attachment": ">=0.2.1-rc.2 <0.3.0-0 || 0.2.2-rc.1",
+          "@deepseek-ai/dsh-authorization": ">=0.2.1-rc.2 <0.3.0-0 || 0.2.2-rc.1",
+          "@deepseek-ai/dsh-brand": ">=0.2.1-rc.2 <0.3.0-0 || 0.2.2-rc.1",
+          "@deepseek-ai/dsh-client-ui-conversation": ">=0.2.1-rc.2 <0.3.0-0 || 0.2.2-rc.1",
+          "@deepseek-ai/dsh-client-ui-renderer": ">=0.2.1-rc.2 <0.3.0-0 || 0.2.2-rc.1",
+          "@deepseek-ai/dsh-client-ui-settings": ">=0.2.1-rc.2 <0.3.0-0 || 0.2.2-rc.1",
+          "@deepseek-ai/dsh-client-ui-settings-general": ">=0.2.1-rc.2 <0.3.0-0 || 0.2.2-rc.1",
+          "@deepseek-ai/dsh-client-ui-settings-models": ">=0.2.1-rc.2 <0.3.0-0 || 0.2.2-rc.1",
+          "@deepseek-ai/dsh-client-ui-sidebar": ">=0.2.1-rc.2 <0.3.0-0 || 0.2.2-rc.1",
+          "@deepseek-ai/dsh-client-ui-theme": ">=0.2.1-rc.2 <0.3.0-0 || 0.2.2-rc.1",
+          "@deepseek-ai/dsh-credentials": ">=0.2.1-rc.2 <0.3.0-0 || 0.2.2-rc.1",
+          "@deepseek-ai/dsh-fs": ">=0.2.1-rc.2 <0.3.0-0 || 0.2.2-rc.1",
+          "@deepseek-ai/dsh-host-webserver": ">=0.2.1-rc.2 <0.3.0-0 || 0.2.2-rc.1",
+          "@deepseek-ai/dsh-launch-environment": ">=0.2.1-rc.2 <0.3.0-0 || 0.2.2-rc.1",
+          "@deepseek-ai/dsh-llm": ">=0.2.1-rc.2 <0.3.0-0 || 0.2.2-rc.1",
+          "@deepseek-ai/dsh-llm-pi-ai": ">=0.2.1-rc.2 <0.3.0-0 || 0.2.2-rc.1",
+          "@deepseek-ai/dsh-sandbox": ">=0.2.1-rc.2 <0.3.0-0 || 0.2.2-rc.1",
+          "@deepseek-ai/dsh-scope": ">=0.2.1-rc.2 <0.3.0-0 || 0.2.2-rc.1",
+          "@deepseek-ai/dsh-session": ">=0.2.1-rc.2 <0.3.0-0 || 0.2.2-rc.1",
+          "@deepseek-ai/dsh-settings": ">=0.2.1-rc.2 <0.3.0-0 || 0.2.2-rc.1",
+          "@deepseek-ai/dsh-timeout": ">=0.2.1-rc.2 <0.3.0-0 || 0.2.2-rc.1",
+          "@deepseek-ai/dsh-typert-protocol": ">=0.2.1-rc.2 <0.3.0-0 || 0.2.2-rc.1",
+          "@deepseek-ai/dsh-client-locale": ">=0.2.1-rc.2 <0.3.0-0 || 0.2.2-rc.1"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "oidc-0.3.3.tgz",
+        "sizeBytes": 895767,
+        "size": "875 KB",
+        "sha256": "1701def13c4cf931aa2345e351c1e2f52449cc171f7fe914c5f64b40f2ef5349",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:49:20.742Z",
+        "error": null
+      }
+    },
+    {
+      "id": "skin-market",
+      "title": "dsh-skin-market",
+      "summary": "原生皮肤市场与生命周期管理器，发现社区皮肤、展示预览与兼容状态，并提供已验证的一键安装或手动安装入口。",
+      "highlights": [],
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "network",
+        "env"
+      ],
+      "category": "dev",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "dsh-skin-market",
+      "version": "0.1.81",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 295,
+      "downloads": 14221,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "skin-market-0.1.81.tgz",
+        "sizeBytes": 9283398,
+        "size": "8.9 MB",
+        "sha256": "6e1a98ee45a53fea83d0e8ec8f05e5debe73cb4c61cd680aa9bdfb6778ee9bf4",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T03:02:46.481Z",
+        "error": null
+      }
+    },
+    {
+      "id": "feiyu-mood",
+      "title": "dsh-feiyu-mood",
+      "summary": "给 AI 伙伴一个每轮判定、以一小段上下文提示的心情，面板里能看心情值、情绪维度与时间线。",
+      "highlights": [],
+      "tags": [
+        "fs-write",
+        "fs-read",
+        "network",
+        "env",
+        "llm"
+      ],
+      "category": "ops",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "dsh-feiyu-mood",
+      "version": "0.9.2",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 247,
+      "downloads": 16893,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "feiyu-mood-0.9.2.tgz",
+        "sizeBytes": 6741086,
+        "size": "6.4 MB",
+        "sha256": "de4e26cf06f0245166589383cbc52dd39d188bd03726073e83cc6e0b3103a486",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:49:23.162Z",
+        "error": null
+      }
+    },
+    {
+      "id": "tts-bridge",
+      "title": "dsh-tts-bridge",
+      "summary": "用 DeepSeek 网页端自带的朗读，把 DSH 里的对话念出来，靠一个小浏览器扩展驱动。",
+      "highlights": [],
+      "tags": [
+        "fs-write",
+        "fs-read",
+        "network",
+        "env"
+      ],
+      "category": "model",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "dsh-tts-bridge",
+      "version": "1.3.3",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 217,
+      "downloads": 5821,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "tts-bridge-1.3.3.tgz",
+        "sizeBytes": 66816,
+        "size": "65 KB",
+        "sha256": "26ee8582fb7efaf34aa1b437dd5f14d6082b3e5424f2e5663d81505ccf9327f2",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:51:01.312Z",
+        "error": null
+      }
+    },
+    {
+      "id": "auto-memory",
+      "title": "自动记忆",
+      "summary": "三层记忆（用户级 / 项目笔记 / 每日日志）自动注入与检索，每日反思，带可视化面板。",
+      "highlights": [
+        "用户偏好、项目约定、每日日志分三层存放",
+        "自动注入相关记忆，不用每次重复交代背景",
+        "支持从其他记忆插件继承"
+      ],
+      "tags": [
+        "记忆",
+        "上下文",
+        "知识沉淀"
+      ],
+      "category": "office",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repo": "Aik358/dsh-auto-memory",
+      "repoUrl": "https://github.com/Aik358/dsh-auto-memory",
+      "packageName": "@a9i5k4/dsh-auto-memory",
+      "version": "3.3.17",
+      "sourceVersion": null,
+      "license": "BSD-3-Clause",
+      "stars": 193,
+      "downloads": 14156,
+      "forks": 18,
+      "ghDescription": "Proactive associative memory for DSH: system-prompt recall before the model speaks, three-layer auto-consolidation, skill crystallization, and Astra-style context management - handoff ledgers, PLAN whiteboard, water-level sensing. Local-first, model-agnostic, zero deps. 事件驱动的主动联想记忆+Astra 式上下文管理：自动唤回/自动沉淀/技能固化/交接账本与白板跨窗口续命/水位感知。",
+      "pushedAt": "2026-11-07T11:11:47Z",
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "install-matrix",
+        "detail": "bundles +@a9i5k4/dsh-auto-memory",
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "auto-memory-3.3.17.tgz",
+        "sizeBytes": 32665021,
+        "size": "31.2 MB",
+        "sha256": "7061c9ebc76ff2ad3e347390f0dca5c638ea8d3e6e90bd2265eed8941558d1b7",
+        "strategy": "npm",
+        "builtAt": "2026-11-06T01:22:26.053Z",
+        "error": null
+      }
+    },
+    {
+      "id": "notification",
+      "title": "回合完成通知",
+      "summary": "DSH 每一回合结束时弹桌面通知，可按结果分别控制，支持关键词包含 / 排除。",
+      "highlights": [
+        "回合结束即提醒，长任务不用盯着屏幕",
+        "按成功 / 失败 / 中断分别开关",
+        "支持关键词白名单与黑名单"
+      ],
+      "tags": [
+        "通知",
+        "提醒",
+        "桌面"
+      ],
+      "category": "office",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repo": "omdsh-dev/dsh-notification",
+      "repoUrl": "https://github.com/omdsh-dev/dsh-notification",
+      "packageName": "dsh-notification",
+      "version": "0.1.4",
+      "sourceVersion": null,
+      "license": "MIT",
+      "stars": 91,
+      "downloads": 0,
+      "forks": 13,
+      "ghDescription": "Desktop notifications for DeepSeek Harness turn completions, with per-outcome controls and include/exclude keyword rules.",
+      "pushedAt": "2026-09-01T01:00:44Z",
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "install-matrix",
+        "detail": "bundles +dsh-notification",
+        "unmet": [],
+        "peerRanges": {
+          "@deepseek-ai/dsh-session": "*",
+          "@deepseek-ai/dsh-session-projection": "*",
+          "@deepseek-ai/dsh-invariants": "*",
+          "@deepseek-ai/dsh-client-runtime": "*",
+          "@deepseek-ai/dsh-client-store": "*",
+          "@deepseek-ai/dsh-client-ui-slots": "*",
+          "@deepseek-ai/dsh-client-ui-settings": "*",
+          "@deepseek-ai/dsh-client-locale": "*"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "notification-0.1.4.tgz",
+        "sizeBytes": 996026,
+        "size": "973 KB",
+        "sha256": "52f642b90de58616a2c04ba1bcc393a08073ca2fb0366bfc5eac7452fc51ed36",
+        "strategy": "git",
+        "builtAt": "2026-11-06T01:28:26.290Z",
+        "error": null
+      }
+    },
+    {
+      "id": "mineru",
+      "title": "MinerU 文档解析",
+      "summary": "把 PDF / 图片 / DOCX / PPTX / XLSX 解析成结构化 Markdown 或 JSON，扫描件走 OCR，适合长文档理解。",
+      "highlights": [
+        "扫描件、图片走 OCR 流程",
+        "输出 Markdown / JSON，便于喂给模型",
+        "支持批量文档解析"
+      ],
+      "tags": [
+        "OCR",
+        "PDF",
+        "解析",
+        "长文档"
+      ],
+      "category": "docs",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": false,
+        "reason": "解析能力依赖 MinerU 服务，纯断网环境需先在内网自建 MinerU，再把服务地址填进插件配置。"
+      },
+      "featured": false,
+      "verified": false,
+      "repo": "HuanLinOTO/dsh-plugin-mineru",
+      "repoUrl": "https://github.com/HuanLinOTO/dsh-plugin-mineru",
+      "packageName": "@huanlin/dsh-plugin-mineru",
+      "version": "0.4.2",
+      "sourceVersion": null,
+      "license": "NOASSERTION",
+      "stars": 52,
+      "downloads": 0,
+      "forks": 3,
+      "ghDescription": "向模型暴露 MinerU 文档解析工具，将 PDF/图片/DOCX/PPTX/XLSX 转为结构化 Markdown/JSON | Exposes MinerU document-parsing tools to the model, converting PDF/images/DOCX/PPTX/XLSX into structured Markdown/JSON",
+      "pushedAt": "2026-10-18T07:04:32Z",
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "install-matrix",
+        "detail": "bundles +@huanlin/dsh-plugin-mineru",
+        "unmet": [],
+        "peerRanges": {
+          "@deepseek-ai/dsh-client-connection": "^0.2.1-alpha.5",
+          "@deepseek-ai/dsh-client-locale": "^0.2.1-alpha.5",
+          "@deepseek-ai/dsh-client-ui-plugin-manager": "^0.2.1-alpha.5",
+          "@deepseek-ai/dsh-client-ui-renderer": "^0.2.1-alpha.5",
+          "@deepseek-ai/dsh-client-ui-settings": "^0.2.1-alpha.5",
+          "@deepseek-ai/dsh-client-ui-slots": "^0.2.1-alpha.5",
+          "@deepseek-ai/dsh-llm": "^0.2.1-alpha.5",
+          "@deepseek-ai/dsh-tools": "^0.2.1-alpha.5"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "mineru-0.4.2.tgz",
+        "sizeBytes": 100540,
+        "size": "98 KB",
+        "sha256": "781ac5546a101c33f18b8f3a875ea065d85b062a837c6bb8dd420ac19d145ae0",
+        "strategy": "npm",
+        "builtAt": "2026-11-05T16:03:03.643Z",
+        "error": null
+      }
+    },
+    {
+      "id": "sticky-note",
+      "title": "便签",
+      "summary": "随手记点子、感想与 TODO，Markdown 预览、快捷键、历史归档，存储路径可配置。",
+      "highlights": [
+        "随手记，不打断当前任务",
+        "Markdown 预览与历史归档",
+        "数据落在本地文件，可自行备份"
+      ],
+      "tags": [
+        "便签",
+        "待办",
+        "笔记"
+      ],
+      "category": "office",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repo": "Meredith2328/dsh-sticky-note",
+      "repoUrl": "https://github.com/Meredith2328/dsh-sticky-note",
+      "packageName": "dsh-sticky-note",
+      "version": "1.0.0",
+      "sourceVersion": null,
+      "license": "MIT",
+      "stars": 46,
+      "downloads": 0,
+      "forks": 6,
+      "ghDescription": "左下角便签：随手记点子/感想/TODO，实时保存到归档目录，清单+悬浮归档",
+      "pushedAt": "2026-10-30T08:33:52Z",
+      "archived": false,
+      "compat": {
+        "ok": false,
+        "source": "install-matrix",
+        "detail": "+ dsh-sticky-note 1.0.0 Done in 953ms using pnpm v11.28.5",
+        "unmet": [
+          {
+            "name": "@deepseek-ai/dsh-client-runtime",
+            "range": "^0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-locale",
+            "range": "^0.1.0-rc.6"
+          }
+        ],
+        "peerRanges": {
+          "@deepseek-ai/dsh-client-runtime": "^0.1.0-rc.6",
+          "@deepseek-ai/dsh-client-locale": "^0.1.0-rc.6"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "sticky-note-1.0.0.tgz",
+        "sizeBytes": 14700,
+        "size": "14 KB",
+        "sha256": "806749a5ab04211a06a3ba43e2024100374338a5588580ebae7fc8e6587c2d56",
+        "strategy": "npm",
+        "builtAt": "2026-11-06T01:39:08.179Z",
+        "error": null
+      }
+    },
+    {
+      "id": "files",
+      "title": "文档上传与直读",
+      "summary": "在原生上传管线上加文件夹按钮，拖进对话的 PDF / DOCX / XLSX 由 read_document 直接解析成文本。",
+      "highlights": [
+        "拖拽上传即生成彩色输入卡片",
+        "read_document 直接读 PDF / DOCX / XLSX",
+        "内容嗅探 + LRU 缓存，会话之间文件互相隔离"
+      ],
+      "tags": [
+        "上传",
+        "PDF",
+        "DOCX",
+        "XLSX"
+      ],
+      "category": "docs",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repo": "taxueseek/dsh-files",
+      "repoUrl": "https://github.com/taxueseek/dsh-files",
+      "packageName": "dsh-files",
+      "version": "0.6.3",
+      "sourceVersion": null,
+      "license": "MIT",
+      "stars": 43,
+      "downloads": 0,
+      "forks": 10,
+      "ghDescription": "DeepSeek Harness 插件：原生上传管线上的文件夹按钮 + read_document 文档解析（PDF/DOCX/XLSX）。The folder button on the native upload pipeline, plus the read_document parser.",
+      "pushedAt": "2026-11-07T06:36:22Z",
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "install-matrix",
+        "detail": "bundles +dsh-files",
+        "unmet": [],
+        "peerRanges": {
+          "@deepseek-ai/dsh-client-ui-primitives": "^0.2.0-rc.1 || ^0.2.1-alpha.1",
+          "@deepseek-ai/dsh-fs": "^0.2.0-rc.1 || ^0.2.1-alpha.1",
+          "@deepseek-ai/dsh-client-runtime": "^0.1.0-rc.6 || ^0.1.1-rc.2 || ^0.2.0-rc.1 || ^0.2.1-alpha.1",
+          "@deepseek-ai/dsh-tools": "^0.1.0-rc.6 || ^0.2.0-rc.1 || ^0.2.1-alpha.1"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "files-0.6.3.tgz",
+        "sizeBytes": 145303523,
+        "size": "138.6 MB",
+        "sha256": "5948bf733941c1e938207d4d14c4c63f8a2b83e35d3786e61003ff4cd3b9e351",
+        "strategy": "git",
+        "builtAt": "2026-11-05T16:33:02.173Z",
+        "error": null
+      }
+    },
+    {
+      "id": "easyssh",
+      "title": "EasySSH 远程 IDE",
+      "summary": "把 Web 端升级成 JupyterLab 式 IDE，并让 AI 在本机操控远程服务器：文件树、语法高亮编辑、diff、内置终端。",
+      "highlights": [
+        "JupyterLab 式文件树 + 代码编辑 + 多格式预览",
+        "Trae 风格红绿 diff",
+        "「本地大脑、远程手脚」的 SSH 远程工作区",
+        "零配置文件改动"
+      ],
+      "tags": [
+        "SSH",
+        "IDE",
+        "diff",
+        "终端"
+      ],
+      "category": "ssh",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repo": "chenw2759-wq/dsh-easyssh",
+      "repoUrl": "https://github.com/chenw2759-wq/dsh-IDE",
+      "packageName": "dsh-easyssh",
+      "version": "0.1.0",
+      "sourceVersion": null,
+      "license": "BSD-3-Clause",
+      "stars": 43,
+      "downloads": 0,
+      "forks": 4,
+      "ghDescription": "dsh-IDE 把 DeepSeek Harness（DSH）网页版升级成一站式 IDE：JupyterLab 式文件树、带语法高亮的代码编辑、多格式预览、Trae 风格红绿 diff 和内置终端，再加上「本地大脑、远程手脚」的 SSH 远程工作区，让 AI 直接在本机操控远程服务器，全程零配置文件改动。",
+      "pushedAt": "2026-09-04T08:12:07Z",
+      "archived": false,
+      "compat": {
+        "ok": false,
+        "source": "install-matrix",
+        "detail": "+ dsh-easyssh 0.1.0 Done in 5.7s using pnpm v11.28.5",
+        "unmet": [
+          {
+            "name": "@deepseek-ai/dsh-client-connection",
+            "range": "^0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-locale",
+            "range": "^0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-runtime",
+            "range": "^0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-ui-settings",
+            "range": "^0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-ui-sidebar",
+            "range": "^0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-ui-slots",
+            "range": "^0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-fs",
+            "range": "^0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-fs-sandbox",
+            "range": "^0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-host-webserver",
+            "range": "^0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-subprocess",
+            "range": "^0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-subprocess-local",
+            "range": "^0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-system-prompt",
+            "range": "^0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-timeout",
+            "range": "^0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-tools",
+            "range": "^0.1.0-rc.6"
+          }
+        ],
+        "peerRanges": {
+          "@deepseek-ai/dsh-client-connection": "^0.1.0-rc.6",
+          "@deepseek-ai/dsh-client-locale": "^0.1.0-rc.6",
+          "@deepseek-ai/dsh-client-runtime": "^0.1.0-rc.6",
+          "@deepseek-ai/dsh-client-ui-settings": "^0.1.0-rc.6",
+          "@deepseek-ai/dsh-client-ui-sidebar": "^0.1.0-rc.6",
+          "@deepseek-ai/dsh-client-ui-slots": "^0.1.0-rc.6",
+          "@deepseek-ai/dsh-fs": "^0.1.0-rc.6",
+          "@deepseek-ai/dsh-fs-sandbox": "^0.1.0-rc.6",
+          "@deepseek-ai/dsh-host-webserver": "^0.1.0-rc.6",
+          "@deepseek-ai/dsh-subprocess": "^0.1.0-rc.6",
+          "@deepseek-ai/dsh-subprocess-local": "^0.1.0-rc.6",
+          "@deepseek-ai/dsh-system-prompt": "^0.1.0-rc.6",
+          "@deepseek-ai/dsh-timeout": "^0.1.0-rc.6",
+          "@deepseek-ai/dsh-tools": "^0.1.0-rc.6"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "easyssh-0.1.0.tgz",
+        "sizeBytes": 17642202,
+        "size": "16.8 MB",
+        "sha256": "820c2d02c903a826018f2ceb092c1e9495a3f934e6a9f2608ef69aace89f82a6",
+        "strategy": "git",
+        "builtAt": "2026-11-05T16:40:03.145Z",
+        "error": null
+      }
+    },
+    {
+      "id": "whale-report",
+      "title": "日报周报生成",
+      "summary": "从会话事件日志生成日报 / 周报 / 月报 / 年报，任意时间区间，只读不改写原日志。",
+      "highlights": [
+        "按任意区间汇总工作内容",
+        "只读会话日志，不会改动原始记录",
+        "适合直接贴进周会材料"
+      ],
+      "tags": [
+        "日报",
+        "周报",
+        "汇报"
+      ],
+      "category": "office",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repo": "SenmuuuuW/dsh-whale-report",
+      "repoUrl": "https://github.com/SenmuuuuW/dsh-whale-report",
+      "packageName": "dsh-whale-report",
+      "version": "0.6.1",
+      "sourceVersion": null,
+      "license": "MIT",
+      "stars": 31,
+      "downloads": 0,
+      "forks": 3,
+      "ghDescription": "深迹 DeepTrace — Your Agent, in numbers. DSH 插件：从会话事件日志生成日报/周报/月报/年报/自定义区间，确定性洞察与协作复盘，只读、不改写历史。",
+      "pushedAt": "2026-09-03T05:31:21Z",
+      "archived": false,
+      "compat": {
+        "ok": false,
+        "source": "install-matrix",
+        "detail": "+ dsh-whale-report 0.6.1 Done in 11.1s using pnpm v11.28.5",
+        "unmet": [
+          {
+            "name": "@deepseek-ai/dsh-session",
+            "range": ">=0.1.1-rc.2 <0.2.0"
+          },
+          {
+            "name": "@deepseek-ai/dsh-session-query",
+            "range": ">=0.1.1-rc.2 <0.2.0"
+          },
+          {
+            "name": "@deepseek-ai/dsh-storage",
+            "range": ">=0.1.1-rc.2 <0.2.0"
+          },
+          {
+            "name": "@deepseek-ai/dsh-storage-domain",
+            "range": ">=0.1.1-rc.2 <0.2.0"
+          },
+          {
+            "name": "@deepseek-ai/dsh-tools",
+            "range": ">=0.1.1-rc.2 <0.2.0"
+          }
+        ],
+        "peerRanges": {
+          "@deepseek-ai/dsh-session": ">=0.1.1-rc.2 <0.2.0",
+          "@deepseek-ai/dsh-session-query": ">=0.1.1-rc.2 <0.2.0",
+          "@deepseek-ai/dsh-storage": ">=0.1.1-rc.2 <0.2.0",
+          "@deepseek-ai/dsh-storage-domain": ">=0.1.1-rc.2 <0.2.0",
+          "@deepseek-ai/dsh-tools": ">=0.1.1-rc.2 <0.2.0"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "whale-report-0.6.1.tgz",
+        "sizeBytes": 1619328,
+        "size": "1.5 MB",
+        "sha256": "575134fda90885a3468f533513188199ca9ebc9d6d85a626cba0a72159725135",
+        "strategy": "npm",
+        "builtAt": "2026-11-06T01:39:24.748Z",
+        "error": null
+      }
+    },
+    {
+      "id": "hongtou",
+      "title": "红头公文生成",
+      "summary": "两阶段解耦流水线（LLM 结构化提纲 + 确定性 Word 2003 XML 版式渲染）生成标准红头公文。",
+      "highlights": [
+        "LLM 只负责内容，版式由确定性渲染保证",
+        "输出符合公文格式的 Word 文档",
+        "格式稳定，不会每次都变形"
+      ],
+      "tags": [
+        "公文",
+        "Word",
+        "红头"
+      ],
+      "category": "docs",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repo": "ExElectron/dsh-tool-hongtou",
+      "repoUrl": "https://github.com/ExElectron/dsh-tool-hongtou",
+      "packageName": "dsh-tool-hongtou",
+      "version": "0.2.0",
+      "sourceVersion": null,
+      "license": "MIT",
+      "stars": 27,
+      "downloads": 0,
+      "forks": 7,
+      "ghDescription": "DeepSeek Harness 红头公文插件：两阶段解耦流水线（LLM 结构化提纲 + 确定性 Word 2003 XML 版式渲染）生成标准红头公文",
+      "pushedAt": "2026-09-17T14:13:20Z",
+      "archived": false,
+      "compat": {
+        "ok": false,
+        "source": "install-matrix",
+        "detail": "+ dsh-tool-hongtou 0.2.0 Done in 1s using pnpm v11.28.5",
+        "unmet": [
+          {
+            "name": "@deepseek-ai/dsh-llm",
+            "range": "^0.1.0-rc.6"
+          },
+          {
+            "name": "@deepseek-ai/dsh-session-query",
+            "range": "^0.1.0-rc.6"
+          }
+        ],
+        "peerRanges": {
+          "@deepseek-ai/dsh-llm": "^0.1.0-rc.6",
+          "@deepseek-ai/dsh-session-query": "^0.1.0-rc.6"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "hongtou-0.2.0.tgz",
+        "sizeBytes": 28638,
+        "size": "28 KB",
+        "sha256": "c9c6d7efea534fce7721db4dc02ba87647643efcbd1c7c599fb349ff9b8c328c",
+        "strategy": "npm",
+        "builtAt": "2026-11-06T01:53:07.423Z",
+        "error": null
+      }
+    },
+    {
+      "id": "file-explorer",
+      "title": "文件浏览器",
+      "summary": "右侧可调宽文件树，Markdown 渲染、语法高亮、面板内编辑，一键用 VS Code 或系统文件管理器打开。",
+      "highlights": [
+        "多标签预览，切换不重新加载",
+        "Markdown 渲染 + 多语言语法高亮",
+        "可直接在面板内编辑并保存回磁盘",
+        "一键在 VS Code / 系统资源管理器中定位"
+      ],
+      "tags": [
+        "文件树",
+        "预览",
+        "VS Code"
+      ],
+      "category": "office",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repo": "joejojoking-cloud/dsh-file-explorer",
+      "repoUrl": "https://github.com/joejojoking-cloud/dsh-file-explorer",
+      "packageName": "dsh-file-explorer",
+      "version": "0.1.7",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 21,
+      "downloads": 0,
+      "forks": 5,
+      "ghDescription": "File explorer plugin for DeepSeek Harness: file tree, preview, markdown, syntax highlighting, in-panel editing, VS Code integration - DeepSeek Harness 全局文件资源管理器插件",
+      "pushedAt": "2026-08-31T05:39:25Z",
+      "archived": false,
+      "compat": {
+        "ok": false,
+        "source": "install-matrix",
+        "detail": "已安装但未登记为 profile 层",
+        "unmet": [
+          {
+            "name": "@deepseek-ai/dsh-client-locale",
+            "range": "^0.0.1-rc.1"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-runtime",
+            "range": "^0.0.1-rc.1"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-ui-conversation",
+            "range": "^0.0.1-rc.1"
+          },
+          {
+            "name": "@deepseek-ai/dsh-client-ui-slots",
+            "range": "^0.0.1-rc.1"
+          }
+        ],
+        "peerRanges": {
+          "@deepseek-ai/dsh-client-locale": "^0.0.1-rc.1",
+          "@deepseek-ai/dsh-client-runtime": "^0.0.1-rc.1",
+          "@deepseek-ai/dsh-client-ui-conversation": "^0.0.1-rc.1",
+          "@deepseek-ai/dsh-client-ui-slots": "^0.0.1-rc.1"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "file-explorer-0.1.7.tgz",
+        "sizeBytes": 112418,
+        "size": "110 KB",
+        "sha256": "eed954c44535603a339405d9f54e32756bbd65912ea006777154390002de29c8",
+        "strategy": "git",
+        "builtAt": "2026-11-06T02:59:53.887Z",
+        "error": null
+      }
+    },
+    {
+      "id": "ssh-exec",
+      "title": "SSH 远程执行",
+      "summary": "基于 ssh2 的远程执行插件：ProxyJump 跳板链、SFTP 文件系统、子进程与 PTY，一个包补齐远程运维能力。",
+      "highlights": [
+        "ProxyJump 多级跳板链",
+        "SFTP 文件系统读写",
+        "远程子进程与交互式 PTY"
+      ],
+      "tags": [
+        "SSH",
+        "ProxyJump",
+        "SFTP",
+        "PTY"
+      ],
+      "category": "ssh",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": true,
+      "repo": "UynajGI/dsh-ssh",
+      "repoUrl": "https://github.com/UynajGI/dsh-ssh",
+      "packageName": "dsh-ssh",
+      "version": "0.4.3",
+      "sourceVersion": null,
+      "license": "MIT",
+      "stars": 16,
+      "downloads": 0,
+      "forks": 8,
+      "ghDescription": "SSH remote-execution plugin for DeepSeek Harness: ProxyJump chain, SFTP filesystem, subprocess and PTY over ssh2",
+      "pushedAt": "2026-11-02T07:27:13Z",
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "install-matrix",
+        "detail": "bundles +dsh-ssh",
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "ssh-exec-0.4.3.tgz",
+        "sizeBytes": 2277779,
+        "size": "2.2 MB",
+        "sha256": "a8099690be661b5244df67f555914e125524ab15347c125499f62fb008b39139",
+        "strategy": "npm",
+        "builtAt": "2026-11-05T16:15:55.925Z",
+        "error": null
+      }
+    },
+    {
+      "id": "code-review-2",
+      "title": "dsh-code-review",
+      "summary": "提供 /review、/review-status 和 /review-cancel，用独立原生子 Agent 审查所选 Git 范围（基准分支、未提交更改、某次提交或自定义要求），并把发现报告返回当前会话；报告语言跟随宿主 locale，支持中英文。",
+      "highlights": [],
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "env",
+        "subagent"
+      ],
+      "category": "dev",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "@michengai/dsh-code-review",
+      "version": "1.0.8",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 16,
+      "downloads": 24917,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {
+          "@deepseek-ai/dsh-agent": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-commands": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-llm": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-session": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-settings": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-subagent": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-system-prompt": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-tools": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-user-approval": ">=0.2.0-rc.1 <0.3.0-0",
+          "@deepseek-ai/dsh-user-questions": ">=0.2.0-rc.1 <0.3.0-0"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "code-review-2-1.0.8.tgz",
+        "sizeBytes": 2872464,
+        "size": "2.7 MB",
+        "sha256": "eda544b65044cbd5d74d731da0db1a1349a94302034aad61451af6b04b370db6",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:52:28.778Z",
+        "error": null
+      }
+    },
+    {
+      "id": "remote-ssh",
+      "title": "SSH 主机当透明工作区",
+      "summary": "把 SSH 主机直接注册成工作区，Agent 的读写与编辑操作在远端生效，像操作本地目录一样。",
+      "highlights": [
+        "SSH 主机 = 工作区，无需镜像同步",
+        "读写、编辑、搜索全部走远端",
+        "配置轻量，适合固定几台跳板机"
+      ],
+      "tags": [
+        "SSH",
+        "工作区",
+        "轻量"
+      ],
+      "category": "ssh",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": true,
+      "repo": "Yan-Zero/dsh-remote-ssh",
+      "repoUrl": "https://github.com/Yan-Zero/dsh-remote-ssh",
+      "packageName": "dsh-remote-ssh",
+      "version": "1.0.2",
+      "sourceVersion": null,
+      "license": "Apache-2.0",
+      "stars": 15,
+      "downloads": 0,
+      "forks": 4,
+      "ghDescription": "Use SSH hosts as transparent workspaces in DeepSeek Harness.",
+      "pushedAt": "2026-08-16T07:47:39Z",
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "install-matrix",
+        "detail": "bundles +dsh-remote-ssh",
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "remote-ssh-1.0.2.tgz",
+        "sizeBytes": 736401,
+        "size": "719 KB",
+        "sha256": "3d8e1f785e44d0628fad7626a77c633b6d09576e03242366d59321eba0045790",
+        "strategy": "npm",
+        "builtAt": "2026-11-05T16:16:02.209Z",
+        "error": null
+      }
+    },
+    {
+      "id": "handwritten-ppt",
+      "title": "学术手写风 PPT",
+      "summary": "Notability 手写风格的 HTML 幻灯片 Skill，支持导出 PNG，适合学术汇报与教学场景。",
+      "highlights": [
+        "手写笔记风格的 HTML 幻灯片",
+        "可导出 PNG 便于插入论文或海报",
+        "面向学术汇报排版"
+      ],
+      "tags": [
+        "学术",
+        "手写风",
+        "PNG"
+      ],
+      "category": "ppt",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repo": "tjxj/dsh-wanghong-handwritten-ppt",
+      "repoUrl": "https://github.com/tjxj/dsh-wanghong-handwritten-ppt",
+      "packageName": "dsh-wanghong-handwritten-ppt",
+      "version": "0.1.0",
+      "sourceVersion": null,
+      "license": "MIT",
+      "stars": 13,
+      "downloads": 0,
+      "forks": 2,
+      "ghDescription": "王虹学术手写风 PPT Skill for DeepSeek Harness · Notability-style HTML slides and PNG export",
+      "pushedAt": "2026-08-14T10:42:11Z",
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "install-matrix",
+        "detail": "bundles +dsh-wanghong-handwritten-ppt",
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "handwritten-ppt-0.1.0.tgz",
+        "sizeBytes": 420758,
+        "size": "411 KB",
+        "sha256": "2ef97d6aef9772e10c2702cbe8969602167ad902ed04574e4b47069d2e8025f4",
+        "strategy": "git",
+        "builtAt": "2026-11-05T16:17:51.757Z",
+        "error": null
+      }
+    },
+    {
+      "id": "bookmarks",
+      "title": "回复书签",
+      "summary": "给任意一条回复加带备注和标签的书签，跨会话集中查看，一键导出 Markdown。",
+      "highlights": [
+        "消息级书签，带备注与标签",
+        "跨会话书签中心",
+        "一键导出 Markdown"
+      ],
+      "tags": [
+        "书签",
+        "检索",
+        "导出"
+      ],
+      "category": "office",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repo": "penguin-oo/dsh-bookmarks",
+      "repoUrl": "https://github.com/penguin-oo/dsh-bookmarks",
+      "packageName": "dsh-bookmarks",
+      "version": "0.1.5",
+      "sourceVersion": null,
+      "license": "MIT",
+      "stars": 9,
+      "downloads": 0,
+      "forks": 1,
+      "ghDescription": "Bookmark assistant replies in DeepSeek Harness: per-message bookmarks with notes/tags, a cross-session center, and one-click Markdown export.",
+      "pushedAt": "2026-09-30T14:39:18Z",
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "install-matrix",
+        "detail": "bundles +dsh-bookmarks",
+        "unmet": [],
+        "peerRanges": {
+          "@deepseek-ai/dsh-session": "^0.1.0-rc.6 || ^0.2.0-rc.1",
+          "@deepseek-ai/dsh-session-persistence": "^0.1.0-rc.6 || ^0.2.0-rc.1",
+          "@deepseek-ai/dsh-storage-domain": "^0.1.0-rc.6 || ^0.2.0-rc.1",
+          "@deepseek-ai/dsh-typert-protocol": "^0.1.0-rc.6 || ^0.2.0-rc.1"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "bookmarks-0.1.5.tgz",
+        "sizeBytes": 1150827,
+        "size": "1.1 MB",
+        "sha256": "402ad0633c9b8ad36ca66e127175f392bf3c315075f835315904f996e487998d",
+        "strategy": "npm",
+        "builtAt": "2026-11-06T01:39:29.097Z",
+        "error": null
+      }
+    },
+    {
+      "id": "code-review",
+      "title": "dsh-code-review",
+      "summary": "复用当前 DSH Agent 模型只读审查 Git 与 SVN 变更，支持变更预览、显式上下文及经审批的模型请求。",
+      "highlights": [],
+      "tags": [
+        "shell",
+        "fs-write",
+        "fs-read",
+        "env",
+        "llm"
+      ],
+      "category": "dev",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "@feng0531/dsh-code-review",
+      "version": "0.92.3",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 9,
+      "downloads": 26998,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "peer-ranges",
+        "detail": null,
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "code-review-0.92.3.tgz",
+        "sizeBytes": 942005,
+        "size": "920 KB",
+        "sha256": "b3572f21688b581d75a80dfcd7fb4ceedccdbe41918e6d50243cbff1581cdbd0",
+        "strategy": "npm",
+        "builtAt": "2026-11-09T02:38:51.648Z",
+        "error": null
+      }
+    },
+    {
+      "id": "docs-panel",
+      "title": "随身手册",
+      "summary": "全局 Markdown 笔记面板，任何工作区随时可读：右侧滑出、亮暗主题、拖拽调宽、悬浮大纲。",
+      "highlights": [
+        "全局笔记，不绑定工作区",
+        "侧边滑出阅读，可拖拽调宽",
+        "一键转到 Chrome / VS Code 继续编辑"
+      ],
+      "tags": [
+        "笔记",
+        "Markdown",
+        "阅读"
+      ],
+      "category": "office",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repo": "mlosun/dsh-docs-panel",
+      "repoUrl": "https://github.com/mlosun/dsh-docs-panel",
+      "packageName": "dsh-docs-panel",
+      "version": "0.1.0",
+      "sourceVersion": null,
+      "license": "MIT",
+      "stars": 8,
+      "downloads": 0,
+      "forks": 4,
+      "ghDescription": "DSH WebUI 里的「随身手册」：全局 Markdown 笔记，任何工作区随时可读。",
+      "pushedAt": "2026-08-19T06:23:07Z",
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "install-matrix",
+        "detail": "bundles +dsh-docs-panel",
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "docs-panel-0.1.0.tgz",
+        "sizeBytes": 17112,
+        "size": "17 KB",
+        "sha256": "ef8018f10851d67db16304ec82bfe87ca6f70687591fc0a764f7cd8a6067336e",
+        "strategy": "npm",
+        "builtAt": "2026-11-06T01:39:31.788Z",
+        "error": null
+      }
+    },
+    {
+      "id": "anydoc",
+      "title": "AnyDoc 文档转 Markdown",
+      "summary": "基于 @firecrawl/anydoc，把 Word、PPT、Excel、PDF、EPUB、CSV 统一转换成 GitHub 风格 Markdown。",
+      "highlights": [
+        "一个工具覆盖 7 类常见文档格式",
+        "输出 GitHub Flavored Markdown，表格保留",
+        "适合把外部资料批量喂进工作区"
+      ],
+      "tags": [
+        "Markdown",
+        "转换",
+        "EPUB"
+      ],
+      "category": "docs",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repo": "beancookie/dsh-plugin-anydoc",
+      "repoUrl": "https://github.com/beancookie/dsh-plugin-anydoc",
+      "packageName": "dsh-plugin-anydoc",
+      "version": "0.1.0",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 7,
+      "downloads": 0,
+      "forks": 1,
+      "ghDescription": "DSH 插件：基于 @firecrawl/anydoc 将 Word、PPT、Excel、PDF、EPUB、CSV 等文档转换为 GitHub-Flavored Markdown",
+      "pushedAt": "2026-08-14T08:12:10Z",
+      "archived": false,
+      "compat": {
+        "ok": false,
+        "source": "install-matrix",
+        "detail": "+ dsh-plugin-anydoc 0.1.0 Done in 6.4s using pnpm v11.28.5",
+        "unmet": [
+          {
+            "name": "@deepseek-ai/dsh-tools",
+            "range": "^0.1.0-rc.6"
+          }
+        ],
+        "peerRanges": {
+          "@deepseek-ai/dsh-tools": "^0.1.0-rc.6"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "anydoc-0.1.0.tgz",
+        "sizeBytes": 18232187,
+        "size": "17.4 MB",
+        "sha256": "9606519a96ffe925ef832acdbfd8327032ebec3097d072be5ac31f1bd0ab88de",
+        "strategy": "git",
+        "builtAt": "2026-11-05T16:09:44.714Z",
+        "error": null
+      }
+    },
+    {
+      "id": "pdf-toolbox",
+      "title": "PDF 工具箱",
+      "summary": "用本地 pdfjs-dist 提取文本、元数据与指定页码范围，不需要任何 API Key。",
+      "highlights": [
+        "本地解析，文档不出机器",
+        "可按页码范围抽取",
+        "读取 PDF 元数据"
+      ],
+      "tags": [
+        "PDF",
+        "文本提取",
+        "离线"
+      ],
+      "category": "docs",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repo": "sunshine-lang/dsh-pdf",
+      "repoUrl": "https://github.com/sunshine-lang/dsh-pdf",
+      "packageName": "dsh-pdf",
+      "version": "0.1.1",
+      "sourceVersion": null,
+      "license": "MIT",
+      "stars": 7,
+      "downloads": 0,
+      "forks": 1,
+      "ghDescription": "PDF toolbox for DeepSeek Harness: extract text, metadata, and page ranges via pdfjs-dist (local, no API key)",
+      "pushedAt": "2026-09-21T10:26:59Z",
+      "archived": false,
+      "compat": {
+        "ok": false,
+        "source": "install-matrix",
+        "detail": "+ dsh-pdf 0.1.1 Done in 6.3s using pnpm v11.28.5",
+        "unmet": [
+          {
+            "name": "@deepseek-ai/dsh-tools",
+            "range": "^0.1.5-rc.2 || ^0.1.6-alpha.2"
+          }
+        ],
+        "peerRanges": {
+          "@deepseek-ai/dsh-tools": "^0.1.5-rc.2 || ^0.1.6-alpha.2"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "pdf-toolbox-0.1.1.tgz",
+        "sizeBytes": 38601502,
+        "size": "36.8 MB",
+        "sha256": "2eac66e77fa56ff4af38ebe0b6bd694778249dad71e2b4cc5ed4cd100392b8f0",
+        "strategy": "git",
+        "builtAt": "2026-11-05T16:10:17.721Z",
+        "error": null
+      }
+    },
+    {
+      "id": "cloud-workspaces",
+      "title": "远程 Linux 工作区",
+      "summary": "bash / read / write / edit / glob / grep 全部透明跑在远端服务器上，远端零安装。",
+      "highlights": [
+        "整套文件类工具透明重定向到远端",
+        "远端不需要装任何东西",
+        "适合远程编译、远程调试场景"
+      ],
+      "tags": [
+        "SSH",
+        "远程开发",
+        "零安装"
+      ],
+      "category": "ssh",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repo": "harryopo/dsh-remote-ide",
+      "repoUrl": "https://github.com/harryopo/dsh-cloud-workspaces",
+      "packageName": "dsh-cloud-workspaces",
+      "version": "0.4.0",
+      "sourceVersion": null,
+      "license": "Apache-2.0",
+      "stars": 5,
+      "downloads": 0,
+      "forks": 2,
+      "ghDescription": "Remote Linux workspaces over SSH for DeepSeek Harness — the agent's bash/read/write/edit/glob/grep tools transparently run on your server. Zero remote install.",
+      "pushedAt": "2026-11-07T14:29:29Z",
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "install-matrix",
+        "detail": "bundles +dsh-cloud-workspaces",
+        "unmet": [],
+        "peerRanges": {
+          "@deepseek-ai/dsh-jobs": "^0.2.1-rc.5",
+          "@deepseek-ai/dsh-system-prompt": "^0.2.1-rc.5",
+          "@deepseek-ai/dsh-tools": "^0.2.1-rc.5",
+          "@deepseek-ai/dsh-typert-protocol": "^0.2.1-rc.5",
+          "@deepseek-ai/dsh-workspace": "^0.2.1-rc.5"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "cloud-workspaces-0.4.0.tgz",
+        "sizeBytes": 38516017,
+        "size": "36.7 MB",
+        "sha256": "31511169455d38dd4a74ce9ded3c30e3c8d8e8fdf07c20ecdbd797a2284fb81f",
+        "strategy": "git",
+        "builtAt": "2026-11-05T16:16:50.120Z",
+        "error": null
+      }
+    },
+    {
+      "id": "np-ppt",
+      "title": "PPT 演示专家（PPTD DSL）",
+      "summary": "内置 PPTD DSL 引擎、所见即所得可视化编辑器与 Python-PPTX 离线编译内核，一键导出高保真 PPTX。",
+      "highlights": [
+        "PPTD DSL：先用结构化描述讲清版式",
+        "自带可视化编辑器，可手动微调",
+        "Python-PPTX 离线编译，导出 PPTX"
+      ],
+      "tags": [
+        "PPTX",
+        "DSL",
+        "编辑器"
+      ],
+      "category": "ppt",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repo": "z953218350/dsh-np-ppt",
+      "repoUrl": "https://github.com/z953218350/dsh-np-ppt",
+      "packageName": "dsh-np-ppt",
+      "version": "1.0.0",
+      "sourceVersion": null,
+      "license": "MIT",
+      "stars": 4,
+      "downloads": 0,
+      "forks": 0,
+      "ghDescription": "原生 DSH (DeepSeek Harness) 插件：PPT 演示文稿专家，内置 PPTD DSL 引擎、55173 所见即所得可视化编辑器、Python-PPTX 高保真离线编译内核与一键导出 PPTX。 | Native DSH plugin: PPT presentation expert with PPTD DSL engine, 55173 WYSIWYG editor, Python-PPTX offline compiler & 1-click PPTX export.",
+      "pushedAt": "2026-08-14T14:38:32Z",
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "install-matrix",
+        "detail": "bundles +dsh-np-ppt",
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "np-ppt-1.0.0.tgz",
+        "sizeBytes": 103862,
+        "size": "101 KB",
+        "sha256": "f1cc20a0bf1c126021ffe89af58d65b9e1c536d64218ed0644cb334dcc39af95",
+        "strategy": "git",
+        "builtAt": "2026-11-05T16:17:26.463Z",
+        "error": null
+      }
+    },
+    {
+      "id": "pdf-edit",
+      "title": "PDF 编辑",
+      "summary": "AI 只改文字不改样式：支持单页与批量替换，HTML 中转保留原有排版，大文件也能处理。",
+      "highlights": [
+        "改内容不动版式",
+        "单页修改或批量替换",
+        "HTML 中转保留样式"
+      ],
+      "tags": [
+        "PDF",
+        "编辑",
+        "批量"
+      ],
+      "category": "docs",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repo": "Whatsmore-nf/dsh-pdf-edit",
+      "repoUrl": "https://github.com/Whatsmore-nf/dsh-pdf-edit",
+      "packageName": "dsh-pdf-edit",
+      "version": "0.4.5",
+      "sourceVersion": null,
+      "license": "MIT",
+      "stars": 3,
+      "downloads": 0,
+      "forks": 3,
+      "ghDescription": "PDF编辑插件，支持单页、批量、换版式，HTML中转保留样式，高效处理大文件。     PDF editor. Supports single-page, batch, and layout changes. HTML intermediate preserves styles. Optimized for large files.",
+      "pushedAt": "2026-08-25T07:34:31Z",
+      "archived": true,
+      "compat": {
+        "ok": false,
+        "source": "install-matrix",
+        "detail": "+ dsh-pdf-edit 0.4.5 Done in 1m 1.6s using pnpm v11.28.5",
+        "unmet": [
+          {
+            "name": "@deepseek-ai/dsh-tools",
+            "range": "0.1.1-rc.2"
+          }
+        ],
+        "peerRanges": {
+          "@deepseek-ai/dsh-tools": "0.1.1-rc.2"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "pdf-edit-0.4.5.tgz",
+        "sizeBytes": 39292109,
+        "size": "37.5 MB",
+        "sha256": "c817d54f5aa3c69713db084ddf7f4390ee6dd44a6664b51d90d77b6eb90b8c2b",
+        "strategy": "npm",
+        "builtAt": "2026-11-06T01:55:42.184Z",
+        "error": null
+      }
+    },
+    {
+      "id": "deck-builder",
+      "title": "Markdown 转 HTML 幻灯片",
+      "summary": "把 Markdown 转成自带主题与键盘导航的单文件 HTML 演示文稿，零依赖、不改核心。",
+      "highlights": [
+        "Markdown 直接变可放映的 HTML",
+        "多主题、键盘导航",
+        "单文件产出，方便内网分发"
+      ],
+      "tags": [
+        "HTML",
+        "Markdown",
+        "幻灯片"
+      ],
+      "category": "ppt",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repo": "Blaczz/dsh-deck-builder",
+      "repoUrl": "https://github.com/Blaczz/dsh-deck-builder",
+      "packageName": "dsh-deck-builder",
+      "version": "0.1.0",
+      "sourceVersion": null,
+      "license": "MIT",
+      "stars": 1,
+      "downloads": 0,
+      "forks": 0,
+      "ghDescription": "DeepSeek Harness tool plugin: convert Markdown into a self-contained HTML presentation (slides) with themes and keyboard navigation. Zero dependencies, no core changes.",
+      "pushedAt": "2026-08-14T09:12:12Z",
+      "archived": false,
+      "compat": {
+        "ok": false,
+        "source": "install-matrix",
+        "detail": "+ dsh-deck-builder 0.1.0 Done in 914ms using pnpm v11.28.5",
+        "unmet": [
+          {
+            "name": "@deepseek-ai/dsh-tools",
+            "range": ">=0.1.0-rc.3 <0.2.0"
+          }
+        ],
+        "peerRanges": {
+          "@deepseek-ai/dsh-tools": ">=0.1.0-rc.3 <0.2.0"
+        }
+      },
+      "package": {
+        "status": "ready",
+        "file": "deck-builder-0.1.0.tgz",
+        "sizeBytes": 12460,
+        "size": "12 KB",
+        "sha256": "c750d5b0a09a9e6ff37ca77e7a40815e86245bf059ba054ebc9937c5b6c81f5a",
+        "strategy": "git",
+        "builtAt": "2026-11-05T16:17:33.515Z",
+        "error": null
+      }
+    },
+    {
+      "id": "dlp-recovery",
+      "title": "DLP 加密文件恢复",
+      "summary": "把被透明加密软件（Ocular / TSGuard 等）覆盖成密文的源文件还原为磁盘明文，自带扫描、恢复与校验。",
+      "highlights": [
+        "按 %TSD-Header 特征识别被加密文件",
+        "受信进程读出明文，再按字节覆写回原路径",
+        "恢复后自动校验语法与哈希，串写能被发现",
+        "专门解决「文件看起来正常、外部程序读到乱码」这类问题"
+      ],
+      "tags": [
+        "DLP",
+        "加密",
+        "恢复",
+        "Windows"
+      ],
+      "category": "tools",
+      "alsoIn": [],
+      "notes": null,
+      "offline": {
+        "ready": true,
+        "reason": null
+      },
+      "featured": false,
+      "verified": false,
+      "repoUrl": "",
+      "packageName": "dsh-dlp-recovery",
+      "version": "1.0.0",
+      "sourceVersion": null,
+      "license": "",
+      "stars": 0,
+      "downloads": 0,
+      "forks": 0,
+      "ghDescription": "",
+      "pushedAt": null,
+      "archived": false,
+      "compat": {
+        "ok": true,
+        "source": "install-matrix",
+        "detail": "bundles +dsh-dlp-recovery",
+        "unmet": [],
+        "peerRanges": {}
+      },
+      "package": {
+        "status": "ready",
+        "file": "dlp-recovery-1.0.0.tgz",
+        "sizeBytes": 10044,
+        "size": "10 KB",
+        "sha256": "962e60cbf1358af98ced661d3c6301ef28311cd24afa8d93bba4887fb39f37f1",
+        "strategy": "local",
+        "builtAt": "2026-11-06T01:55:46.501Z",
+        "error": null
+      }
+    }
+  ]
+}
