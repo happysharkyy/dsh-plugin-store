@@ -374,8 +374,13 @@
       ta.style.opacity = '0';
       document.body.append(ta);
       ta.select();
-      document.execCommand('copy');
-      ta.remove();
+      try {
+        if (!document.execCommand('copy')) return toast('复制失败，请手动复制');
+      } catch {
+        return toast('复制失败，请手动复制');
+      } finally {
+        ta.remove();
+      }
     }
     toast(msg);
   }
@@ -392,6 +397,9 @@
   /* ---------------- 事件 ---------------- */
 
   function bind() {
+    $('#dsh-index-copy')?.addEventListener('click', () =>
+      copy($('#dsh-index-link').href, '索引 URL 已复制'));
+
     let timer;
     $('#search').addEventListener('input', (e) => {
       clearTimeout(timer);

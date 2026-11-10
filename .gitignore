@@ -20,6 +20,7 @@ runtime/node/
 data/admin-token.txt
 data/admin/
 data/uploads/
+data/mirror/
 
 # 生成的中间产物
 mirror/manifest.old.json

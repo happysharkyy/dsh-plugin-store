@@ -7,7 +7,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 export DEBIAN_FRONTEND=noninteractive
 export CI=1
 
-WIN_ROOT=/mnt/d/dsh_store_plugin
+WIN_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 BUILD_ROOT="$HOME/store-linux"
 NODE_VER=v22.22.3
 TOOLS="$HOME/tools"
@@ -42,20 +42,22 @@ rm -rf "$BUILD_ROOT"
 mkdir -p "$BUILD_ROOT"
 cp -a "$WIN_ROOT/catalog" "$BUILD_ROOT/"
 cp -a "$WIN_ROOT/scripts" "$BUILD_ROOT/"
+cp -a "$WIN_ROOT/local-plugins" "$BUILD_ROOT/"
 cp -a "$WIN_ROOT/package.json" "$BUILD_ROOT/" 2>/dev/null || true
 mkdir -p "$BUILD_ROOT/mirror/packages"
 # 保留已有 manifest 以便复用已知结论
-[ -f "$WIN_ROOT/mirror/manifest.json" ] && cp "$WIN_ROOT/mirror/manifest.json" "$BUILD_ROOT/mirror/manifest.json"
+[ -f "$WIN_ROOT/mirror/manifest-linux.json" ] && cp "$WIN_ROOT/mirror/manifest-linux.json" "$BUILD_ROOT/mirror/manifest.json"
 echo "工作目录: $BUILD_ROOT"
 
 step "3. 镜像全部插件（linux-x64）"
 cd "$BUILD_ROOT"
-node scripts/mirror.mjs 2>&1 | tee "$BUILD_ROOT/mirror.log"
+node scripts/mirror.mjs "$@" 2>&1 | tee "$BUILD_ROOT/mirror.log"
 STATUS=${PIPESTATUS[0]}
+if [ "$STATUS" -ne 0 ]; then exit "$STATUS"; fi
 
 step "4. 回传到 Windows 工程"
 OUT="$WIN_ROOT/mirror/packages-linux"
-rm -rf "$OUT"; mkdir -p "$OUT"
+mkdir -p "$OUT"
 cp -f "$BUILD_ROOT"/mirror/packages/*.tgz "$OUT/" 2>/dev/null
 cp -f "$BUILD_ROOT/mirror/manifest.json" "$WIN_ROOT/mirror/manifest-linux.json"
 

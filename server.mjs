@@ -7,6 +7,8 @@
  *   GET  /api/plugins           合并后的插件目录（基础目录 + 后台添加）
  *   GET  /api/stats             统计
  *   GET  /api/health            健康检查
+ *   GET  /dsh/index.json        DSH 原生插件索引
+ *   GET  /npm/…                 只读 npm 元数据及安装包
  *   GET  /packages/<file>.tgz   安装包
  *   GET  /install/<id>.sh|.ps1  一句话安装脚本
  *
@@ -22,6 +24,7 @@
  *   HOST               监听地址（默认 0.0.0.0）
  *   DSH_STORE_ADMIN_TOKEN  后台令牌（不设则自动生成到 data/admin-token.txt）
  *   DSH_STORE_PLATFORM 覆盖展示的平台标识（默认 当前平台）
+ *   DSH_STORE_PUBLIC_URL 反向代理的外部源站地址
  */
 import http from 'node:http';
 import fs from 'node:fs';
@@ -39,14 +42,21 @@ import {
   updateAdminPlugin,
   removeAdminPlugin,
   loadAdmin,
+  resolveCatalogPackage,
   resolvePackageFile,
 } from './lib/store.mjs';
+import { marketCatalog, marketIndex, packument } from './lib/market.mjs';
 
 const WEB = path.join(ROOT, 'web');
 const PORT = Number(process.env.PORT || 8787);
 const HOST = process.env.HOST || '0.0.0.0';
 const PLATFORM = process.env.DSH_STORE_PLATFORM || `${process.platform}-${process.arch}`;
 const MAX_UPLOAD = 512 * 1024 * 1024;
+const PUBLIC_URL = process.env.DSH_STORE_PUBLIC_URL && new URL(process.env.DSH_STORE_PUBLIC_URL);
+if (PUBLIC_URL && (!['http:', 'https:'].includes(PUBLIC_URL.protocol) || PUBLIC_URL.username
+  || PUBLIC_URL.password || PUBLIC_URL.pathname !== '/' || PUBLIC_URL.search || PUBLIC_URL.hash)) {
+  throw new Error('DSH_STORE_PUBLIC_URL 必须是内网 HTTP(S) 源站地址，不含路径、凭据、查询或片段');
+}
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
@@ -123,14 +133,15 @@ const authOf = (req, url) => req.headers['x-admin-token'] || url.searchParams.ge
 
 const server = http.createServer(async (req, res) => {
   const started = Date.now();
-  const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
-  const pathname = decodeURIComponent(url.pathname);
-
-  res.on('finish', () => {
-    console.log(`${String(res.statusCode).padEnd(4)} ${req.method.padEnd(6)} ${pathname} ${Date.now() - started}ms`);
-  });
-
+  let pathname;
   try {
+    const url = new URL(req.url, 'http://localhost');
+    pathname = decodeURIComponent(url.pathname);
+
+    res.on('finish', () => {
+      console.log(`${String(res.statusCode).padEnd(4)} ${req.method.padEnd(6)} ${pathname} ${Date.now() - started}ms`);
+    });
+
     /* ---------------- 管理 API ---------------- */
 
     if (pathname.startsWith('/api/admin/')) {
@@ -188,8 +199,25 @@ const server = http.createServer(async (req, res) => {
       return send(res, 405, 'Method not allowed', { 'content-type': 'text/plain; charset=utf-8' });
     }
 
+    const origin = PUBLIC_URL?.origin || new URL(`http://${req.headers.host || 'localhost'}`).origin;
+    const registry = `${origin}/npm/`;
+    if (pathname === '/dsh/index.json') {
+      return sendJson(res, marketIndex(marketCatalog(), registry));
+    }
+    if (pathname.startsWith('/npm/')) {
+      const { packages } = marketCatalog();
+      const target = pathname.slice('/npm/'.length);
+      const tarball = /^-\/(.+)\/([^/]+)\.tgz$/.exec(target);
+      if (tarball) {
+        const entry = packages.get(tarball[1])?.get(tarball[2]);
+        if (entry) return serveFile(res, req, entry.file);
+      } else if (packages.has(target)) {
+        return sendJson(res, await packument(target, packages.get(target), registry));
+      }
+      return sendJson(res, { error: 'Not found' }, 404);
+    }
+
     if (pathname === '/api/plugins') {
-      const origin = `${url.protocol}//${req.headers.host}`;
       const catalog = mergedCatalog(origin);
       if (!catalog.plugins.length) {
         return sendJson(res, { error: '目录为空。请先运行 node scripts/build-catalog.mjs，或在 /admin 上传插件' }, 503);
@@ -215,7 +243,9 @@ const server = http.createServer(async (req, res) => {
 
     if (pathname.startsWith('/packages/')) {
       const name = pathname.slice('/packages/'.length);
-      const file = resolvePackageFile(name);
+      const catalog = mergedCatalog();
+      const plugin = catalog.plugins.find((entry) => entry.package.file === name && entry.package.status === 'ready');
+      const file = plugin ? resolveCatalogPackage(plugin, catalog.site.platform) : resolvePackageFile(name);
       if (!file) return send(res, 404, 'package not found', { 'content-type': 'text/plain; charset=utf-8' });
       res.setHeader('content-disposition', `attachment; filename="${path.basename(file)}"`);
       return serveFile(res, req, file);
@@ -232,7 +262,6 @@ const server = http.createServer(async (req, res) => {
       if (!plugin) return send(res, 404, '# 未知插件 id', { 'content-type': 'text/plain; charset=utf-8' });
       if (plugin.package.status !== 'ready') return send(res, 409, '# 该插件尚未镜像完成', { 'content-type': 'text/plain; charset=utf-8' });
 
-      const origin = `${url.protocol}//${req.headers.host}`;
       const pkgUrl = `${origin}/packages/${plugin.package.file}`;
       const lines = type === 'sh'
         ? [
@@ -273,7 +302,7 @@ const server = http.createServer(async (req, res) => {
 
     send(res, 404, 'Not found', { 'content-type': 'text/plain; charset=utf-8' });
   } catch (err) {
-    const code = err?.statusCode || 500;
+    const code = err?.statusCode || (err instanceof URIError ? 400 : 500);
     console.error(`ERROR ${pathname}:`, err?.message || err);
     if (!res.headersSent) sendJson(res, { error: err?.message || '内部错误' }, code);
     else res.destroy();
@@ -288,6 +317,7 @@ server.listen(PORT, HOST, () => {
   console.log(`  监听    http://${HOST}:${PORT}`);
   console.log(`  平台    ${PLATFORM}`);
   console.log(`  目录    ${catalog.stats.total} 个插件（后台 ${loadAdmin().plugins.length} 个），${catalog.stats.ready} 个已就绪`);
+  console.log(`  索引    ${PUBLIC_URL?.origin || `http://<商店地址>:${PORT}`}/dsh/index.json`);
   console.log(`  后台    http://${HOST === '0.0.0.0' ? '127.0.0.1' : HOST}:${PORT}/admin`);
   console.log(`  令牌    ${token.slice(0, 8)}…（完整值见 data/admin-token.txt）`);
   console.log('');
