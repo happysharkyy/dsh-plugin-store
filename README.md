@@ -2,7 +2,7 @@
 
 给内网开发人员用的 DSH 插件商店：网页上架 + 离线安装包 + 零依赖 Node 服务 + 后台管理。
 
-部署目标：**Linux x64 服务器（无外网）**。用户打开网页 → 下载 `.tgz` → 一条命令装进自己的 DSH。
+部署目标：**Linux x64 服务器（无外网）**。用户可以在 DSH「发现」页安装，也可以从网页获取 `.tgz` 安装命令。
 
 当前上架 5 类共 30 个插件：**文档处理**（8）、**SSH 远程**（5）、**PPT 制作**（5）、**办公协作**（12，IM 接入 / 邮件 / 通知 / 笔记 / 汇报）、**效率工具**（1）。
 
@@ -61,6 +61,43 @@ sudo ufw allow 8787/tcp                                                         
 ```
 
 商店地址就是安装命令里的地址，比如 `http://10.0.8.21:8787`。
+
+## 接入 DSH「发现」页
+
+1. 打开 DSH 的 **插件 → 实验性插件 → 自定义插件索引**。部分版本在「更多」内，名称为「自定义插件市场」。
+2. 在 **发现 → 添加索引源** 填入 `http://10.0.8.21:8787/dsh/index.json`。把示例地址换成 DSH Host 可访问的商店地址。
+3. 在「发现」选择插件并安装。索引指向同一服务上的只读 npm 接口 `/npm/`，安装包继续使用现有的离线 `.tgz`。后台上架、编辑和下架会反映在索引里。DSH 可能缓存旧索引，发布后可在「发现」刷新。
+
+反向代理通过 HTTPS 提供服务时，设置 `DSH_STORE_PUBLIC_URL=https://plugins.intra.example` 再启动。索引中的 registry 和 registry 中的下载地址会使用该源站。DSH Host 和 pnpm 都需要信任内网证书。各客户端的 profile 应保持 `autoInstallPeers: false`。只读接口提供已上架的插件包。
+
+## 隔离区增量更新
+
+首次部署仍可用 `scripts/pack-for-intranet.mjs` 交付服务和 Node 运行时。已有部署只需先更新一次服务代码，之后每批只摆渡目录和变动的插件包。
+
+**联网侧**，在目标平台的构建环境按插件 ID 补镜像。已有 Linux 镜像的 Windows 工作站也可运行 `wsl bash ./scripts/wsl-build-linux.sh --only better-sidebar`：
+
+```bash
+node scripts/mirror.mjs --only better-sidebar
+node scripts/build-catalog.mjs --offline --platform=linux
+mkdir -p dist
+node scripts/update-source.mjs export dist/source-001
+```
+
+首批导出全部可安装制品。后续以最近成功导入的一批为基线，仅传输新增或摘要发生变化的制品：
+
+```bash
+node scripts/update-source.mjs export dist/source-002 --since dist/source-001
+```
+
+**内网侧**，通过现有摆渡流程传入整个更新目录。也可在摆渡时将目录压成单个归档，内网解压后执行：
+
+```bash
+node scripts/update-source.mjs import /transfer/source-002
+```
+
+导入按平台、大小、SHA-256 和包内身份校验，全部通过后才切换目录，无需重启服务。重复导入复用已入库的制品。保留上一批的 `catalog.json` 和内网 `data/mirror/packages/`，需要回切时重新导入上一批目录。回切影响可发现的版本，已安装的插件由用户另行处理。更新目录的来源认证由现有摆渡流程负责。
+
+基础镜像由更新目录管理，后台添加的条目继续优先覆盖同 ID 的基础条目。发布会改变内容的插件时应使用新版本号，便于客户端正确识别更新。
 
 ## 用户怎么装
 

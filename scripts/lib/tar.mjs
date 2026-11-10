@@ -353,17 +353,21 @@ export function readPackageJsonFast(file) {
   try {
     const chunk = Buffer.alloc(256 * 1024);
     const n = fs.readSync(fd, chunk, 0, chunk.length, 0);
-    let data;
-    try {
-      data = zlib.gunzipSync(chunk.subarray(0, n));
-    } catch {
-      // 压缩块跨过了 256KB，退回整包解压
-      data = zlib.gunzipSync(fs.readFileSync(file));
+    const find = (data) => readTar(data).find((e) => e.type === 'file' && e.path === 'package/package.json');
+    if (n === chunk.length) {
+      try {
+        const prefix = zlib.gunzipSync(chunk, {
+          finishFlush: zlib.constants.Z_SYNC_FLUSH,
+          maxOutputLength: 8 * 1024 * 1024,
+        });
+        const entry = find(prefix);
+        if (entry) return JSON.parse(entry.data.toString('utf8'));
+      } catch {
+        // 包清单没完整落在前缀内时，兼容外部打包的归档。
+      }
     }
-    // 第一条是目录，第二条就是 package.json
-    const entries = readTar(data);
-    const pj = entries.find((e) => e.type === 'file' && e.path.endsWith('package.json'));
-    return pj ? JSON.parse(pj.data.toString('utf8')) : null;
+    const entry = find(zlib.gunzipSync(fs.readFileSync(file)));
+    return entry ? JSON.parse(entry.data.toString('utf8')) : null;
   } finally {
     fs.closeSync(fd);
   }

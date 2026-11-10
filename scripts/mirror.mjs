@@ -233,6 +233,7 @@ async function registryInfo(name) {
 function finalizePackage(stage, pkg, plugin, meta) {
   const outPkg = JSON.parse(JSON.stringify(pkg));
   delete outPkg.dependencies;
+  delete outPkg.optionalDependencies;
   delete outPkg.devDependencies;
   delete outPkg.scripts;
   delete outPkg.packageManager;

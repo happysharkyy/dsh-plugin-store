@@ -187,7 +187,7 @@ for (const p of sources.plugins) {
     verified: !!p.verified,
     repo: p.repo,
     repoUrl: p.repoUrl || (p.repo ? meta.homepage || `https://github.com/${p.repo}` : ''),
-    packageName: p.packageName,
+    packageName: m.packageName || p.packageName,
     // 版本优先取实际镜像出的包
     version: m.version || null,
     sourceVersion: null,
@@ -241,7 +241,9 @@ const out = {
 };
 
 fs.mkdirSync(path.join(ROOT, 'web', 'data'), { recursive: true });
-fs.writeFileSync(path.join(ROOT, 'web', 'data', 'plugins.json'), JSON.stringify(out, null, 2));
+const catalogFile = path.join(ROOT, 'web', 'data', 'plugins.json');
+fs.writeFileSync(`${catalogFile}.tmp`, JSON.stringify(out, null, 2));
+fs.renameSync(`${catalogFile}.tmp`, catalogFile);
 if (!OFFLINE) fs.writeFileSync(CACHE, JSON.stringify(cache, null, 2));
 
 console.log(`catalog 已生成：${plugins.length} 个插件（已镜像 ${out.stats.ready}，需豁免 ${out.stats.incompatible}）${OFFLINE ? ' [离线模式]' : ''}`);
